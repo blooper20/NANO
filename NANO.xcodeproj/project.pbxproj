@@ -10,12 +10,23 @@
 		EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD102A2AFB6D520078A08C /* AppDelegate.swift */; };
 		EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD102C2AFB6D520078A08C /* SceneDelegate.swift */; };
 		EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD102E2AFB6D520078A08C /* ViewController.swift */; };
-		EEAD10322AFB6D520078A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAD10302AFB6D520078A08C /* Main.storyboard */; };
 		EEAD10342AFB6D530078A08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAD10332AFB6D530078A08C /* Assets.xcassets */; };
 		EEAD10372AFB6D530078A08C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAD10352AFB6D530078A08C /* LaunchScreen.storyboard */; };
 		EEAD10422AFB6D530078A08C /* NANOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10412AFB6D530078A08C /* NANOTests.swift */; };
 		EEAD104C2AFB6D530078A08C /* NANOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD104B2AFB6D530078A08C /* NANOUITests.swift */; };
 		EEAD104E2AFB6D530078A08C /* NANOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD104D2AFB6D530078A08C /* NANOUITestsLaunchTests.swift */; };
+		EEAD105C2AFB7AE70078A08C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD105B2AFB7AE70078A08C /* SnapKit */; };
+		EEAD105E2AFB7AE70078A08C /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */; };
+		EEAD10612AFB7B370078A08C /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10602AFB7B370078A08C /* RxBlocking */; };
+		EEAD10632AFB7B370078A08C /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10622AFB7B370078A08C /* RxBlocking-Dynamic */; };
+		EEAD10652AFB7B370078A08C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10642AFB7B370078A08C /* RxCocoa */; };
+		EEAD10672AFB7B370078A08C /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */; };
+		EEAD10692AFB7B370078A08C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10682AFB7B370078A08C /* RxRelay */; };
+		EEAD106B2AFB7B370078A08C /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */; };
+		EEAD106D2AFB7B370078A08C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106C2AFB7B370078A08C /* RxSwift */; };
+		EEAD106F2AFB7B370078A08C /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */; };
+		EEAD10712AFB7B370078A08C /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10702AFB7B370078A08C /* RxTest */; };
+		EEAD10732AFB7B370078A08C /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10722AFB7B370078A08C /* RxTest-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +51,6 @@
 		EEAD102A2AFB6D520078A08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAD102C2AFB6D520078A08C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EEAD102E2AFB6D520078A08C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EEAD10312AFB6D520078A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAD10332AFB6D530078A08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEAD10362AFB6D530078A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEAD10382AFB6D530078A08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +66,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAD106D2AFB7B370078A08C /* RxSwift in Frameworks */,
+				EEAD106B2AFB7B370078A08C /* RxRelay-Dynamic in Frameworks */,
+				EEAD105C2AFB7AE70078A08C /* SnapKit in Frameworks */,
+				EEAD10612AFB7B370078A08C /* RxBlocking in Frameworks */,
+				EEAD10692AFB7B370078A08C /* RxRelay in Frameworks */,
+				EEAD10652AFB7B370078A08C /* RxCocoa in Frameworks */,
+				EEAD10732AFB7B370078A08C /* RxTest-Dynamic in Frameworks */,
+				EEAD10712AFB7B370078A08C /* RxTest in Frameworks */,
+				EEAD106F2AFB7B370078A08C /* RxSwift-Dynamic in Frameworks */,
+				EEAD105E2AFB7AE70078A08C /* SnapKit-Dynamic in Frameworks */,
+				EEAD10672AFB7B370078A08C /* RxCocoa-Dynamic in Frameworks */,
+				EEAD10632AFB7B370078A08C /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +121,9 @@
 		EEAD10292AFB6D520078A08C /* NANO */ = {
 			isa = PBXGroup;
 			children = (
-				EEAD102A2AFB6D520078A08C /* AppDelegate.swift */,
-				EEAD102C2AFB6D520078A08C /* SceneDelegate.swift */,
-				EEAD102E2AFB6D520078A08C /* ViewController.swift */,
-				EEAD10302AFB6D520078A08C /* Main.storyboard */,
-				EEAD10332AFB6D530078A08C /* Assets.xcassets */,
-				EEAD10352AFB6D530078A08C /* LaunchScreen.storyboard */,
-				EEAD10382AFB6D530078A08C /* Info.plist */,
+				EEAD10762AFCF2960078A08C /* Resources */,
+				EEAD10752AFCF2660078A08C /* Presentation */,
+				EEAD10742AFCF2540078A08C /* Application */,
 			);
 			path = NANO;
 			sourceTree = "<group>";
@@ -127,6 +145,41 @@
 			path = NANOUITests;
 			sourceTree = "<group>";
 		};
+		EEAD10742AFCF2540078A08C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10772AFCF2B20078A08C /* Config */,
+				EEAD102A2AFB6D520078A08C /* AppDelegate.swift */,
+				EEAD102C2AFB6D520078A08C /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EEAD10752AFCF2660078A08C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD102E2AFB6D520078A08C /* ViewController.swift */,
+				EEAD10352AFB6D530078A08C /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EEAD10762AFCF2960078A08C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10332AFB6D530078A08C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEAD10772AFCF2B20078A08C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10382AFB6D530078A08C /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +196,20 @@
 			dependencies = (
 			);
 			name = NANO;
+			packageProductDependencies = (
+				EEAD105B2AFB7AE70078A08C /* SnapKit */,
+				EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */,
+				EEAD10602AFB7B370078A08C /* RxBlocking */,
+				EEAD10622AFB7B370078A08C /* RxBlocking-Dynamic */,
+				EEAD10642AFB7B370078A08C /* RxCocoa */,
+				EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */,
+				EEAD10682AFB7B370078A08C /* RxRelay */,
+				EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */,
+				EEAD106C2AFB7B370078A08C /* RxSwift */,
+				EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */,
+				EEAD10702AFB7B370078A08C /* RxTest */,
+				EEAD10722AFB7B370078A08C /* RxTest-Dynamic */,
+			);
 			productName = NANO;
 			productReference = EEAD10272AFB6D520078A08C /* NANO.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +282,10 @@
 				Base,
 			);
 			mainGroup = EEAD101E2AFB6D520078A08C;
+			packageReferences = (
+				EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = EEAD10282AFB6D520078A08C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +304,6 @@
 			files = (
 				EEAD10372AFB6D530078A08C /* LaunchScreen.storyboard in Resources */,
 				EEAD10342AFB6D530078A08C /* Assets.xcassets in Resources */,
-				EEAD10322AFB6D520078A08C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +367,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EEAD10302AFB6D520078A08C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EEAD10312AFB6D520078A08C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EEAD10352AFB6D530078A08C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -368,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -425,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -444,10 +506,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 585F6TK5A8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NANO/Info.plist;
+				INFOPLIST_FILE = NANO/Application/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -477,10 +538,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 585F6TK5A8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NANO/Info.plist;
+				INFOPLIST_FILE = NANO/Application/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -617,6 +677,88 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EEAD105B2AFB7AE70078A08C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		EEAD10602AFB7B370078A08C /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		EEAD10622AFB7B370078A08C /* RxBlocking-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxBlocking-Dynamic";
+		};
+		EEAD10642AFB7B370078A08C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxCocoa-Dynamic";
+		};
+		EEAD10682AFB7B370078A08C /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxRelay-Dynamic";
+		};
+		EEAD106C2AFB7B370078A08C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxSwift-Dynamic";
+		};
+		EEAD10702AFB7B370078A08C /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		EEAD10722AFB7B370078A08C /* RxTest-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxTest-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEAD101F2AFB6D520078A08C /* Project object */;
 }
