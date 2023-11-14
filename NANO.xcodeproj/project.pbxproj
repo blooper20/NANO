@@ -23,6 +23,8 @@
 		EEAD106B2AFB7B370078A08C /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */; };
 		EEAD106D2AFB7B370078A08C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106C2AFB7B370078A08C /* RxSwift */; };
 		EEAD106F2AFB7B370078A08C /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */; };
+		EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10792B01F01D0078A08C /* Networks.swift */; };
+		EEAD107E2B0359350078A08C /* SearchingTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD107D2B0359350078A08C /* SearchingTitleResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		EEAD10472AFB6D530078A08C /* NANOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NANOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAD104B2AFB6D530078A08C /* NANOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NANOUITests.swift; sourceTree = "<group>"; };
 		EEAD104D2AFB6D530078A08C /* NANOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NANOUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EEAD10792B01F01D0078A08C /* Networks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networks.swift; sourceTree = "<group>"; };
+		EEAD107D2B0359350078A08C /* SearchingTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTitleResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 		EEAD10292AFB6D520078A08C /* NANO */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD107B2B0358FE0078A08C /* Domain */,
+				EEAD10782AFE12060078A08C /* Data */,
 				EEAD10762AFCF2960078A08C /* Resources */,
 				EEAD10752AFCF2660078A08C /* Presentation */,
 				EEAD10742AFCF2540078A08C /* Application */,
@@ -170,6 +176,30 @@
 				EEAD10382AFB6D530078A08C /* Info.plist */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		EEAD10782AFE12060078A08C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10792B01F01D0078A08C /* Networks.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EEAD107B2B0358FE0078A08C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD107C2B0359100078A08C /* Responses */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EEAD107C2B0359100078A08C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD107D2B0359350078A08C /* SearchingTitleResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +348,8 @@
 			files = (
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
 				EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */,
+				EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */,
+				EEAD107E2B0359350078A08C /* SearchingTitleResponse.swift in Sources */,
 				EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
