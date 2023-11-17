@@ -20,7 +20,7 @@ class ReleaseUseCase {
 extension ReleaseUseCase {
     
     //MARK: - Title
-    func getRelease(brand: String) -> Observable<SearchingTitleResponse> {
+    func getRelease(brand: String) -> Observable<SongsResponse> {
         
         let today = Date()
         let dateFormatter = DateFormatter()

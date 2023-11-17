@@ -42,7 +42,7 @@ extension Networks {
     }
     
     //MARK: - API
-    func getData(url: String) -> Observable<SearchingTitleResponse> {
+    func getData(url: String) -> Observable<SongsResponse> {
         return Observable.create { observer in
             guard let url = URL(string: url) else {
                 observer.onError(NSError(domain: "Invalid URL", code: 0))
@@ -62,7 +62,7 @@ extension Networks {
                 
                 do {
                     if let data = data {
-                        let decodedData = try JSONDecoder().decode(SearchingTitleResponse.self, from: data)
+                        let decodedData = try JSONDecoder().decode(SongsResponse.self, from: data)
                         observer.onNext(decodedData)
                         observer.onCompleted()
                     }
@@ -80,12 +80,12 @@ extension Networks {
         
     }
     
-//    func getData(url: String) async -> SearchingTitleResponse? {
+//    func getData(url: String) async -> SongsResponse? {
 //        guard let url = URL(string: url) else { return nil }
 //        let request = URLRequest.init(url: url)
 //        do {
 //            let result:(data: Data, response: URLResponse) = try await URLSession.shared.data(for: request)
-//            return try JSONDecoder().decode(SearchingTitleResponse.self, from: result.data)
+//            return try JSONDecoder().decode(SongsResponse.self, from: result.data)
 //        } catch {
 //            return nil
 //        }
