@@ -1,5 +1,5 @@
 //
-//  SearchingTitleResponse.swift
+//  SongsResponse.swift
 //  NANO
 //
 //  Created by DwaeWoo on 2023/11/14.
@@ -8,8 +8,8 @@
 import Foundation
 
 
-//MARK: - SearchingTitleResponse
-struct SearchingTitleResponse: Decodable {
+//MARK: - SongsResponse
+struct SongsResponse: Decodable {
     let data: [SongInfo]
 }
 
