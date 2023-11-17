@@ -1,5 +1,5 @@
 //
-//  MySongsViewModel.swift
+//  ReleaseViewModel.swift
 //  NANO
 //
 //  Created by DwaeWoo on 2023/11/17.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class MySongsViewModel: ViewModel {
+class ReleaseViewModel: ViewModel {
     
     var disposeBag = DisposeBag()
     let release = ReleaseUseCase.shared
@@ -16,18 +16,18 @@ class MySongsViewModel: ViewModel {
     
     //MARK: - Transform
     func transform(input: Input) -> Output {
-        let mySongs = input.viewDidLoad.flatMap { _ in
+        let releaseSongs = input.viewDidLoad.flatMap { _ in
             return self.release.getRelease(brand: self.appState.brand)
         }
         .map { response in
             return response.data
         }
         
-        return Output(mySongs: mySongs)
+        return Output(releaseSongs: releaseSongs)
     }
 }
 
-extension MySongsViewModel {
+extension ReleaseViewModel {
     
     //MARK: - Input
     struct Input {
@@ -36,7 +36,6 @@ extension MySongsViewModel {
     
     //MARK: - Output
     struct Output {
-        let mySongs: Observable<[SongInfo]>
+        let releaseSongs: Observable<[SongInfo]>
     }
 }
-

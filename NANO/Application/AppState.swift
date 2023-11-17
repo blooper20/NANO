@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class AppState {
+    
+    static let shared = AppState()
+    
+    private init() {}
+    
+    var brand: String = ""
+}

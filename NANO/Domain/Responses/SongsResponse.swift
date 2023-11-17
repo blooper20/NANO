@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 //MARK: - SongsResponse
 struct SongsResponse: Decodable {
     let data: [SongInfo]
