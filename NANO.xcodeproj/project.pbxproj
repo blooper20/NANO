@@ -26,6 +26,7 @@
 		EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10792B01F01D0078A08C /* Networks.swift */; };
 		EEAD107E2B0359350078A08C /* SearchingTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD107D2B0359350078A08C /* SearchingTitleResponse.swift */; };
 		EEAD10812B049BA70078A08C /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10802B049BA70078A08C /* SearchUseCase.swift */; };
+		EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10822B073D420078A08C /* ReleaseUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		EEAD10792B01F01D0078A08C /* Networks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networks.swift; sourceTree = "<group>"; };
 		EEAD107D2B0359350078A08C /* SearchingTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTitleResponse.swift; sourceTree = "<group>"; };
 		EEAD10802B049BA70078A08C /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		EEAD10822B073D420078A08C /* ReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10802B049BA70078A08C /* SearchUseCase.swift */,
+				EEAD10822B073D420078A08C /* ReleaseUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			files = (
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
 				EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */,
+				EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */,
 				EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */,
 				EEAD107E2B0359350078A08C /* SearchingTitleResponse.swift in Sources */,
 				EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */,

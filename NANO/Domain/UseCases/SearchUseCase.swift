@@ -10,20 +10,22 @@ import RxSwift
 
 class SearchUseCase {
     
-    let networks = Networks()
+    static let shared = SearchUseCase()
+    let disposeBag = DisposeBag()
+    
+    let networks = Networks.shared
     
 }
 
 extension SearchUseCase {
-
-//    func getSearchingTitle(brand: String, title: String) async -> SearchingTitleResponse? {
-//        guard let url = URL(string: urlComponent + "brand=\(brand)%title=\(title)") else { return nil }
-//        let request = URLRequest.init(url: url)
-//        do {
-//            let result:(data: Data, response: URLResponse) = try await URLSession.shared.data(for: request)
-//            return try JSONDecoder().decode(SearchingTitleResponse.self, from: result.data)
-//        } catch {
-//            return nil
-//        }
-//    }
+    
+    //MARK: - Title
+    func getSearchTitle(brand: String, title: String) -> Observable<SearchingTitleResponse> {
+        return networks.getData(url: self.networks.getSearchURL() + "brand=\(brand)&title=\(title)")
+    }
+    
+    //MARK: - Singer
+    func getSearchSinger(brand: String, singer: String) -> Observable<SearchingTitleResponse> {
+        return networks.getData(url: self.networks.getReleaseURL() + "brand=\(brand)&singer=\(singer)")
+    }
 }

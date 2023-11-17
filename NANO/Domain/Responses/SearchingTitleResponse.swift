@@ -10,7 +10,7 @@ import Foundation
 
 //MARK: - SearchingTitleResponse
 struct SearchingTitleResponse: Decodable {
-    let data: [SongInfo?]
+    let data: [SongInfo]
 }
 
 struct SongInfo: Decodable {

@@ -10,92 +10,84 @@ import RxSwift
 
 class Networks {
     
+    static let shared = Networks()
+    
+    private init() {}
+    
+    //MARK: - URL Components
     let urlComponent = "https://api.manana.kr/v2/karaoke/"
     
     //MARK: - Path
     let search = "search.json?"
     let release = "release.json?"
-    
-    //MARK: - Brand
-    let tj = "brand=tj&"
-    let kumyoung = "brand=kumyoung&"
-    let joysound = "brand=joysound&"
-    let uga = "brand=uga&"
-    let dam = "brand=dam&"
 }
 
-//MARK: - Function
 extension Networks {
     
     //MARK: - Search
-    func getSearchTJURL() -> String {
-        
-        let url = urlComponent + search + tj
-        
-        return url
-    }
     
-    func getSearchKumyoungURL() -> String {
+    func getSearchURL() -> String {
         
-        let url = urlComponent + search + kumyoung
-        
-        return url
-    }
-    
-    func getSearchJoysoundURL() -> String {
-        
-        let url = urlComponent + search + joysound
-        
-        return url
-    }
-    
-    func getSearchUgaURL() -> String {
-        
-        let url = urlComponent + search + uga
-        
-        return url
-    }
-    
-    func getSearchDamURL() -> String {
-        
-        let url = urlComponent + search + dam
+        let url = urlComponent + search
         
         return url
     }
     
     //MARK: - Release
-    func getReleaseTJURL() -> String {
+    func getReleaseURL() -> String {
         
-        let url = urlComponent + release + tj
-        
-        return url
-    }
-    
-    func getReleaseKumyoungURL() -> String {
-        
-        let url = urlComponent + release + kumyoung
+        let url = urlComponent + release
         
         return url
     }
     
-    func getReleaseJoysoundURL() -> String {
+    //MARK: - API
+    func getData(url: String) -> Observable<SearchingTitleResponse> {
+        return Observable.create { observer in
+            guard let url = URL(string: url) else {
+                observer.onError(NSError(domain: "Invalid URL", code: 0))
+                return Disposables.create()
+            }
+            
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    observer.onError(error)
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                    observer.onError(NSError(domain: "Invalid Response", code: 0))
+                    return
+                }
+                
+                do {
+                    if let data = data {
+                        let decodedData = try JSONDecoder().decode(SearchingTitleResponse.self, from: data)
+                        observer.onNext(decodedData)
+                        observer.onCompleted()
+                    }
+                } catch {
+                    observer.onError(error)
+                }
+            }
+            
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
         
-        let url = urlComponent + release + joysound
-        
-        return url
     }
     
-    func getReleaseUgaURL() -> String {
-        
-        let url = urlComponent + release + uga
-        
-        return url
-    }
-    
-    func getReleaseDamURL() -> String {
-        
-        let url = urlComponent + release + dam
-        
-        return url
-    }
+//    func getData(url: String) async -> SearchingTitleResponse? {
+//        guard let url = URL(string: url) else { return nil }
+//        let request = URLRequest.init(url: url)
+//        do {
+//            let result:(data: Data, response: URLResponse) = try await URLSession.shared.data(for: request)
+//            return try JSONDecoder().decode(SearchingTitleResponse.self, from: result.data)
+//        } catch {
+//            return nil
+//        }
+//    }
 }
