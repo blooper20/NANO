@@ -15,9 +15,15 @@ class ChoiceViewController: UIViewController {
     let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
     
     //MARK: - View Cycle
+    override func loadView() {
+        
+        self.view = choiceView
+        self.view.backgroundColor = .white
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSubView()
+        
         setPickerData()
     }
     
@@ -28,15 +34,7 @@ class ChoiceViewController: UIViewController {
 
 extension ChoiceViewController {
     
-    //MARK: - Add View
-    func setUpSubView() {
-        view.backgroundColor = .white
-        
-        self.view.addSubview(choiceView)
-        choiceView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-    }
+    //MARK: - Set Data
     
     func setPickerData() {
         choiceView.brandPickerView.pickerView.dataSource = self
