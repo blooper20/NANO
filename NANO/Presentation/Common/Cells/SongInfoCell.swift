@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SongInfoCell: UITableViewCell, ReuseIdentifying {
+class SongInfoCell: UITableViewCell {
     
     //MARK: - Declaration
     private lazy var numberLabel:UILabel = {
@@ -89,10 +89,20 @@ extension SongInfoCell {
             make.bottom.equalToSuperview().inset(calculatingHeight(height: 20))
         }
     }
+}
+
+extension SongInfoCell: ReuseIdentifying {
     
-    func bind(songInfo: SongInfo){
-        numberLabel.text = songInfo.no
-        titleLabel.text = songInfo.title
-        singerLabel.text = songInfo.singer
+    struct Model {
+        let no: String
+        let title: String
+        let singer: String
     }
+    
+    func bind(model: Model) {
+        numberLabel.text = model.no
+        titleLabel.text = model.title
+        singerLabel.text = model.singer
+    }
+    
 }

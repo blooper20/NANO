@@ -8,12 +8,24 @@
 import Foundation
 import UIKit
 
-protocol ReuseIdentifying {
+public protocol ReuseIdentifying {
+
+    /// `Cell` 을 구성하는 데이터들의 집합입니다.
+    associatedtype Model
+
+    /// A `reusableIdentifier` that will be used by `dequeueReusableCell(withIdentifier:for:)`.
+    ///
+    /// If you don't override, it's concrete class name.
     static var reuseIdentifier: String { get }
+
+    func bind(model: Model)
+
 }
 
 extension ReuseIdentifying {
-    static var reuseIdentifier: String {
-        return String(describing: self)
+
+    public static var reuseIdentifier: String {
+        return .init(describing: Self.self)
     }
+
 }

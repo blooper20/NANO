@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController {
-
+    
     //MARK: - Function
     private func setTableData() {
         searchView.songInfoTableView.dataSource = self
@@ -51,7 +51,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         guard let songInfoCell = tableView.dequeueReusableCell(withIdentifier: SongInfoCell.reuseIdentifier, for: indexPath) as? SongInfoCell else {
             return UITableViewCell()
         }
-        songInfoCell.bind(songInfo: SongInfo(no: "02345234535234544", title: "title: hafasdfasdfaskjhdfasjkdhgfkhjasdfgkjhsai", singer: "singer: meeasdfasdfasdfnoi", composer: "composer", lyricist: "lyricist", release: "2023.02.12"))
+        songInfoCell.bind(model: .init(no: "", title: "", singer: ""))
         
         return songInfoCell
     }
