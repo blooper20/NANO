@@ -10,7 +10,13 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     //MARK: - Declaration
-    private lazy var searchView = SearchView()
+    private lazy var searchView: SearchView = {
+        let view = SearchView()
+        view.songInfoTableView.dataSource = self
+        view.songInfoTableView.delegate = self
+        
+        return view
+    }()
     
     //MARK: - View Cycle
     override func loadView() {
@@ -21,17 +27,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTableData()
         searchView.songInfoTableView.rowHeight = UITableView.automaticDimension
-    }
-}
-
-extension SearchViewController {
-    
-    //MARK: - Function
-    private func setTableData() {
-        searchView.songInfoTableView.dataSource = self
-        searchView.songInfoTableView.delegate = self
     }
 }
 
