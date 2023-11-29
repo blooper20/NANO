@@ -22,8 +22,8 @@ class MainSearchBar: UISearchBar {
 
 extension MainSearchBar {
     
+    //MARK: - Function
     private func setUpColor() {
         self.searchTextField.leftView?.tintColor = .main
-        self.searchTextField.rightView?.tintColor = .main
     }
 }

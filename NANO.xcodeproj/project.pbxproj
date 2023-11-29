@@ -45,6 +45,7 @@
 		EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10B72B15C0780078A08C /* MainSearchBar.swift */; };
 		EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */; };
 		EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BE2B1604AC0078A08C /* Reusable.swift */; };
+		EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C02B1705810078A08C /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		EEAD10B72B15C0780078A08C /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
 		EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
 		EEAD10BE2B1604AC0078A08C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		EEAD10C02B1705810078A08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10922B0DC63B0078A08C /* ChoiceViewController.swift */,
+				EEAD10C02B1705810078A08C /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,
 				EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */,
 				EEAD10962B0DC6B40078A08C /* ChoiceView.swift in Sources */,
+				EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */,
 				EEAD10902B075A5C0078A08C /* AppState.swift in Sources */,
 				EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */,
 				EEAD10882B07431D0078A08C /* SearchViewModel.swift in Sources */,

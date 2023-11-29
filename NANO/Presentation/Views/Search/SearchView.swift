@@ -12,7 +12,7 @@ class SearchView: UIView {
     
     //MARK: - Declaration
     private lazy var singerTitleSegmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl()
+        let segmentedControl = UISegmentedControl(items: ["제목","가수"])
         segmentedControl.backgroundColor = .main
         
         return segmentedControl
@@ -25,7 +25,7 @@ class SearchView: UIView {
         return searchBar
     }()
     
-    private lazy var SongInfoTableView: UITableView = {
+    lazy var songInfoTableView: UITableView = {
         let tableView = UITableView()
         tableView.isScrollEnabled = true
         tableView.separatorStyle = .none
@@ -41,6 +41,7 @@ class SearchView: UIView {
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setUpSubViews()
     }
     
@@ -51,19 +52,28 @@ class SearchView: UIView {
 
 extension SearchView {
     
+    //MARK: - Function
     private func setUpSubViews() {
         
         self.addSubview(singerTitleSegmentedControl)
         singerTitleSegmentedControl.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(calculatingHeight(height: 22))
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(calculatingHeight(height: 22))
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 18))
+            make.height.equalTo(calculatingHeight(height: 40))
         }
         
         self.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in
-            make.top.equalTo(singerTitleSegmentedControl).offset(calculatingHeight(height: 10))
+            make.top.equalTo(singerTitleSegmentedControl.snp.bottom).offset(calculatingHeight(height: 10))
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 18))
         }
         
+        self.addSubview(songInfoTableView)
+        songInfoTableView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(calculatingHeight(height: 40))
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 18))
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(calculatingHeight(height: 20))
+        }
     }
 }
+

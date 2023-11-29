@@ -16,7 +16,6 @@ class ChoiceViewController: UIViewController {
     
     //MARK: - View Cycle
     override func loadView() {
-        
         self.view = choiceView
         self.view.backgroundColor = .white
     }

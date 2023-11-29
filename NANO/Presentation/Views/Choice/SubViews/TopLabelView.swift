@@ -34,6 +34,7 @@ class TopLabelView: UIView {
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setUpSubViews()
     }
     
@@ -44,7 +45,7 @@ class TopLabelView: UIView {
 
 extension TopLabelView {
     
-    //MARK: - Add View
+    //MARK: - Function
     func setUpSubViews() {
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in

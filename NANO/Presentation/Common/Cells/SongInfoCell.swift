@@ -42,6 +42,7 @@ class SongInfoCell: UITableViewCell, ReuseIdentifying {
     //MARK: - Initialize
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setUpSubViews()
     }
     
@@ -67,22 +68,25 @@ extension SongInfoCell {
         
         self.addSubview(numberLabel)
         numberLabel.snp.makeConstraints { make in
+            make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 40))
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(calculatingWidth(width: 5))
+            make.width.equalTo(calculatingWidth(width: 120))
         }
         
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(numberLabel.snp.right).offset(calculatingWidth(width: 17))
-            make.right.equalToSuperview().offset(calculatingWidth(width: 40))
+            make.right.equalToSuperview().inset(calculatingWidth(width: 40))
             make.top.equalToSuperview().offset(calculatingHeight(height: 20))
         }
         
         self.addSubview(singerLabel)
         singerLabel.snp.makeConstraints { make in
             make.left.equalTo(numberLabel.snp.right).offset(calculatingWidth(width: 17))
-            make.right.equalToSuperview().offset(calculatingWidth(width: 40))
-            make.top.equalTo(titleLabel.snp.bottom).offset(calculatingHeight(height: 15))
+            make.right.equalToSuperview().inset(calculatingWidth(width: 40))
+            make.top.equalTo(titleLabel.snp.bottom).offset(calculatingHeight(height: 20))
+            make.bottom.equalToSuperview().inset(calculatingHeight(height: 20))
         }
     }
     
