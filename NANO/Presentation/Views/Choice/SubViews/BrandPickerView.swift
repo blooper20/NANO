@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BrandPickerView: UIView {
+final class BrandPickerView: UIView {
     
     
     //MARK: - Declaration
@@ -21,6 +21,7 @@ class BrandPickerView: UIView {
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setUpSubView()
     }
     
@@ -31,7 +32,7 @@ class BrandPickerView: UIView {
 
 extension BrandPickerView {
     
-    //MARK: - Add View
+    //MARK: - Function
     private func setUpSubView() {
         self.addSubview(pickerView)
         pickerView.snp.makeConstraints { make in

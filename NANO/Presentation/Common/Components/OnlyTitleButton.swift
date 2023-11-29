@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnlyTitleButton: UIButton {
+final class OnlyTitleButton: UIButton {
     
     //MARK: - Declaration
     private var title: String

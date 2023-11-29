@@ -41,6 +41,12 @@
 		EEAD10AA2B0DD8770078A08C /* CalculatingFigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10A92B0DD8770078A08C /* CalculatingFigma.swift */; };
 		EEAD10AC2B0DDCD60078A08C /* BrandPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10AB2B0DDCD60078A08C /* BrandPickerView.swift */; };
 		EEAD10B02B0DE46F0078A08C /* OnlyTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10AF2B0DE46F0078A08C /* OnlyTitleButton.swift */; };
+		EEAD10B32B1488990078A08C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10B22B1488990078A08C /* SearchView.swift */; };
+		EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10B72B15C0780078A08C /* MainSearchBar.swift */; };
+		EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */; };
+		EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BE2B1604AC0078A08C /* Reusable.swift */; };
+		EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C02B1705810078A08C /* SearchViewController.swift */; };
+		EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C32B1720C30078A08C /* UITableView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +97,12 @@
 		EEAD10A92B0DD8770078A08C /* CalculatingFigma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatingFigma.swift; sourceTree = "<group>"; };
 		EEAD10AB2B0DDCD60078A08C /* BrandPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPickerView.swift; sourceTree = "<group>"; };
 		EEAD10AF2B0DE46F0078A08C /* OnlyTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyTitleButton.swift; sourceTree = "<group>"; };
+		EEAD10B22B1488990078A08C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EEAD10B72B15C0780078A08C /* MainSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSearchBar.swift; sourceTree = "<group>"; };
+		EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
+		EEAD10BE2B1604AC0078A08C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		EEAD10C02B1705810078A08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEAD10C32B1720C30078A08C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +202,7 @@
 		EEAD10752AFCF2660078A08C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD10B92B15CE1F0078A08C /* Common */,
 				EEAD10942B0DC6970078A08C /* Views */,
 				EEAD10912B0DC6130078A08C /* ViewControllers */,
 				EEAD10862B0742400078A08C /* ViewModels */,
@@ -253,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10872B07431D0078A08C /* SearchViewModel.swift */,
-				EEAD10892B07480D0078A08C /* ViewModel.swift */,
 				EEAD108B2B0754FC0078A08C /* ReleaseViewModel.swift */,
 				EEAD108D2B0757BC0078A08C /* MySongsViewModel.swift */,
 			);
@@ -264,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10922B0DC63B0078A08C /* ChoiceViewController.swift */,
+				EEAD10C02B1705810078A08C /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,7 +284,7 @@
 		EEAD10942B0DC6970078A08C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EEAD10AD2B0DE41A0078A08C /* Components */,
+				EEAD10B12B14887B0078A08C /* Search */,
 				EEAD10972B0DC7660078A08C /* Choice */,
 			);
 			path = Views;
@@ -298,6 +311,7 @@
 		EEAD109B2B0DCECA0078A08C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD10BD2B16048A0078A08C /* Protocols */,
 				EEAD109C2B0DCEF20078A08C /* Extensions */,
 				EEAD10A92B0DD8770078A08C /* CalculatingFigma.swift */,
 			);
@@ -310,6 +324,7 @@
 				EEAD109D2B0DCF0C0078A08C /* UILabel+.swift */,
 				EEAD10A32B0DCFF70078A08C /* UIColor+.swift */,
 				EEAD10A52B0DD21D0078A08C /* UIFont+.swift */,
+				EEAD10C32B1720C30078A08C /* UITableView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +335,49 @@
 				EEAD10AF2B0DE46F0078A08C /* OnlyTitleButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EEAD10B12B14887B0078A08C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10B42B14889F0078A08C /* SubViews */,
+				EEAD10B22B1488990078A08C /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EEAD10B42B14889F0078A08C /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10B72B15C0780078A08C /* MainSearchBar.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		EEAD10B92B15CE1F0078A08C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10BC2B15E4A30078A08C /* Cells */,
+				EEAD10AD2B0DE41A0078A08C /* Components */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EEAD10BC2B15E4A30078A08C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EEAD10BD2B16048A0078A08C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10892B07480D0078A08C /* ViewModel.swift */,
+				EEAD10BE2B1604AC0078A08C /* Reusable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,15 +525,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAD10AC2B0DDCD60078A08C /* BrandPickerView.swift in Sources */,
+				EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */,
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
+				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
+				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,
 				EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */,
 				EEAD10962B0DC6B40078A08C /* ChoiceView.swift in Sources */,
+				EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */,
 				EEAD10902B075A5C0078A08C /* AppState.swift in Sources */,
+				EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */,
 				EEAD10882B07431D0078A08C /* SearchViewModel.swift in Sources */,
 				EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */,
 				EEAD10A42B0DCFF70078A08C /* UIColor+.swift in Sources */,
+				EEAD10B32B1488990078A08C /* SearchView.swift in Sources */,
 				EEAD108E2B0757BC0078A08C /* MySongsViewModel.swift in Sources */,
 				EEAD10A62B0DD21D0078A08C /* UIFont+.swift in Sources */,
 				EEAD10B02B0DE46F0078A08C /* OnlyTitleButton.swift in Sources */,

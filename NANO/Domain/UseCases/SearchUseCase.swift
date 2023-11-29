@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class SearchUseCase {
+final class SearchUseCase {
     
     static let shared = SearchUseCase()
     let disposeBag = DisposeBag()

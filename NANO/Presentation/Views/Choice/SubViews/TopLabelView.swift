@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TopLabelView: UIView {
+final class TopLabelView: UIView {
     
     //MARK: - Declaration
     var titleLabel: UILabel = {
@@ -34,6 +34,7 @@ class TopLabelView: UIView {
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setUpSubViews()
     }
     
@@ -44,7 +45,7 @@ class TopLabelView: UIView {
 
 extension TopLabelView {
     
-    //MARK: - Add View
+    //MARK: - Function
     func setUpSubViews() {
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in

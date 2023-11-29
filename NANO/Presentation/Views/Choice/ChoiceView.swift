@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ChoiceView: UIView {
+final class ChoiceView: UIView {
     
     //MARK: - Declaration
     private let topLabelView = TopLabelView()
@@ -18,6 +18,7 @@ class ChoiceView: UIView {
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setUpSubView()
     }
     
@@ -28,7 +29,7 @@ class ChoiceView: UIView {
 
 extension ChoiceView {
     
-    //MARK: - Add View
+    //MARK: - Function
     func setUpSubView() {
         self.addSubview(topLabelView)
         topLabelView.snp.makeConstraints { make in

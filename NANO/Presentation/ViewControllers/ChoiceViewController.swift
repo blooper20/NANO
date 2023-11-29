@@ -8,15 +8,20 @@
 import UIKit
 import SnapKit
 
-class ChoiceViewController: UIViewController {
+final class ChoiceViewController: UIViewController {
     
     //MARK: - Declaration
-    private let choiceView = ChoiceView()
+    private lazy var choiceView: ChoiceView = {
+        let view = ChoiceView()
+        view.brandPickerView.pickerView.dataSource = self
+        view.brandPickerView.pickerView.delegate = self
+        
+        return view
+    }()
     let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
     
     //MARK: - View Cycle
     override func loadView() {
-        
         self.view = choiceView
         self.view.backgroundColor = .white
     }
@@ -24,24 +29,12 @@ class ChoiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setPickerData()
     }
     
     override func viewWillLayoutSubviews() {
         choiceView.brandPickerView.setSelected()
     }
 }
-
-extension ChoiceViewController {
-    
-    //MARK: - Set Data
-    
-    func setPickerData() {
-        choiceView.brandPickerView.pickerView.dataSource = self
-        choiceView.brandPickerView.pickerView.delegate = self
-    }
-}
-
 
 //MARK: - DataSource, Delegate
 extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
