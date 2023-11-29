@@ -46,6 +46,7 @@
 		EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */; };
 		EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BE2B1604AC0078A08C /* Reusable.swift */; };
 		EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C02B1705810078A08C /* SearchViewController.swift */; };
+		EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C32B1720C30078A08C /* UITableView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCell.swift; sourceTree = "<group>"; };
 		EEAD10BE2B1604AC0078A08C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		EEAD10C02B1705810078A08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EEAD10C32B1720C30078A08C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 				EEAD109D2B0DCF0C0078A08C /* UILabel+.swift */,
 				EEAD10A32B0DCFF70078A08C /* UIColor+.swift */,
 				EEAD10A52B0DD21D0078A08C /* UIFont+.swift */,
+				EEAD10C32B1720C30078A08C /* UITableView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				EEAD10AC2B0DDCD60078A08C /* BrandPickerView.swift in Sources */,
 				EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */,
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
+				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
 				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,

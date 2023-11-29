@@ -43,11 +43,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let songInfoCell = tableView.dequeueReusableCell(withIdentifier: SongInfoCell.reuseIdentifier, for: indexPath) as? SongInfoCell else {
-            return UITableViewCell()
-        }
-        songInfoCell.bind(model: .init(no: "", title: "", singer: ""))
+        let songInfoCell = tableView.dequeueReusableCell(SongInfoCell.self, for: indexPath)
+        songInfoCell.bind(model: .init(no: "no", title: "title", singer: "singer"))
         
         return songInfoCell
     }
