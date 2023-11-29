@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainSearchBar: UISearchBar {
+final class MainSearchBar: UISearchBar {
     
     //MARK: - Initialize
     override init(frame: CGRect) {

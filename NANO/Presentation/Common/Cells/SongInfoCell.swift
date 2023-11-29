@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SongInfoCell: UITableViewCell {
+final class SongInfoCell: UITableViewCell {
     
     //MARK: - Declaration
     private lazy var numberLabel:UILabel = {

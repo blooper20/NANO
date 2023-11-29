@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class Networks {
+final class Networks {
     
     static let shared = Networks()
     

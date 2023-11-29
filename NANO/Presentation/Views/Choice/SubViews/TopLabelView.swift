@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TopLabelView: UIView {
+final class TopLabelView: UIView {
     
     //MARK: - Declaration
     var titleLabel: UILabel = {

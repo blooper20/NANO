@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ChoiceViewController: UIViewController {
+final class ChoiceViewController: UIViewController {
     
     //MARK: - Declaration
     private let choiceView = ChoiceView()

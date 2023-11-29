@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BrandPickerView: UIView {
+final class BrandPickerView: UIView {
     
     
     //MARK: - Declaration

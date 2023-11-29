@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ChoiceView: UIView {
+final class ChoiceView: UIView {
     
     //MARK: - Declaration
     private let topLabelView = TopLabelView()

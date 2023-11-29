@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SearchView: UIView {
+final class SearchView: UIView {
     
     //MARK: - Declaration
     private lazy var singerTitleSegmentedControl: UISegmentedControl = {

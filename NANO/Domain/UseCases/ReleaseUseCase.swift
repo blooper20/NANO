@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ReleaseUseCase {
+final class ReleaseUseCase {
     
     static let shared = ReleaseUseCase()
     let disposeBag = DisposeBag()

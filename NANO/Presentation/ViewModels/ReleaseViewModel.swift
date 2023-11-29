@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class ReleaseViewModel: ViewModel {
+final class ReleaseViewModel: ViewModel {
     
     //MARK: - Declaration
     var disposeBag = DisposeBag()

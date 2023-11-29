@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class MySongsViewModel: ViewModel {
+final class MySongsViewModel: ViewModel {
     
     //MARK: - Declaration
     var disposeBag = DisposeBag()

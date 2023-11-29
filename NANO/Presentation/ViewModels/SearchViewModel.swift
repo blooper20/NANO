@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class SearchViewModel: ViewModel {
+final class SearchViewModel: ViewModel {
     
     //MARK: - Declaration
     var disposeBag = DisposeBag()
