@@ -23,7 +23,8 @@ final class PlaylistCell: UITableViewCell {
     private lazy var brandLabel: UILabel = {
        let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.cellMainText
+        label.font = UIFont.cellSubText
+        label.textColor = .white
         label.sizeToFit()
         
         return label

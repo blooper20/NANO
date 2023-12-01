@@ -17,6 +17,8 @@ final class MySongsView: UIView {
         tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         
         let cellType = PlaylistCell.self
         tableView.register(cellType, forCellReuseIdentifier: cellType.reuseIdentifier)
@@ -45,8 +47,8 @@ extension MySongsView {
         self.addSubview(playlistTableView)
         playlistTableView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 20))
-            make.top.equalToSuperview().offset(calculatingHeight(height: 50))
-            make.bottom.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(calculatingHeight(height: 50))
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
 }
