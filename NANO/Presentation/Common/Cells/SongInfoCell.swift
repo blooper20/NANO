@@ -104,5 +104,4 @@ extension SongInfoCell: ReuseIdentifying {
         titleLabel.text = model.title
         singerLabel.text = model.singer
     }
-    
 }
