@@ -11,7 +11,7 @@ import SnapKit
 final class SongInfoCell: UITableViewCell {
     
     //MARK: - Declaration
-    private lazy var numberLabel:UILabel = {
+    private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.cellMainText
