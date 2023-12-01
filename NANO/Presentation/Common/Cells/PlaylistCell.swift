@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class PlaylistCell: UITableViewCell {
+final class PlaylistCell: UITableViewCell {
     
-    //MARK: - Initialize
+    //MARK: - Declaration
     private lazy var cellBackgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .main
