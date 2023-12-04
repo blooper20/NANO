@@ -47,6 +47,9 @@
 		EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10BE2B1604AC0078A08C /* Reusable.swift */; };
 		EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C02B1705810078A08C /* SearchViewController.swift */; };
 		EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C32B1720C30078A08C /* UITableView+.swift */; };
+		EEAD10C62B19BA920078A08C /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C52B19BA910078A08C /* PlaylistCell.swift */; };
+		EEAD10C92B19C0CC0078A08C /* MySongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C82B19C0CC0078A08C /* MySongsView.swift */; };
+		EEAD10CB2B19C3B40078A08C /* MySongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		EEAD10BE2B1604AC0078A08C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		EEAD10C02B1705810078A08C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EEAD10C32B1720C30078A08C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		EEAD10C52B19BA910078A08C /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		EEAD10C82B19C0CC0078A08C /* MySongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongsView.swift; sourceTree = "<group>"; };
+		EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +283,7 @@
 			children = (
 				EEAD10922B0DC63B0078A08C /* ChoiceViewController.swift */,
 				EEAD10C02B1705810078A08C /* SearchViewController.swift */,
+				EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 		EEAD10942B0DC6970078A08C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD10C72B19C0A70078A08C /* MySongs */,
 				EEAD10B12B14887B0078A08C /* Search */,
 				EEAD10972B0DC7660078A08C /* Choice */,
 			);
@@ -367,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10BA2B15CE520078A08C /* SongInfoCell.swift */,
+				EEAD10C52B19BA910078A08C /* PlaylistCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -378,6 +387,14 @@
 				EEAD10BE2B1604AC0078A08C /* Reusable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EEAD10C72B19C0A70078A08C /* MySongs */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10C82B19C0CC0078A08C /* MySongsView.swift */,
+			);
+			path = MySongs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +544,7 @@
 				EEAD10AC2B0DDCD60078A08C /* BrandPickerView.swift in Sources */,
 				EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */,
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
+				EEAD10CB2B19C3B40078A08C /* MySongsViewController.swift in Sources */,
 				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
 				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
@@ -536,9 +554,11 @@
 				EEAD10C12B1705810078A08C /* SearchViewController.swift in Sources */,
 				EEAD10902B075A5C0078A08C /* AppState.swift in Sources */,
 				EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */,
+				EEAD10C92B19C0CC0078A08C /* MySongsView.swift in Sources */,
 				EEAD10882B07431D0078A08C /* SearchViewModel.swift in Sources */,
 				EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */,
 				EEAD10A42B0DCFF70078A08C /* UIColor+.swift in Sources */,
+				EEAD10C62B19BA920078A08C /* PlaylistCell.swift in Sources */,
 				EEAD10B32B1488990078A08C /* SearchView.swift in Sources */,
 				EEAD108E2B0757BC0078A08C /* MySongsViewModel.swift in Sources */,
 				EEAD10A62B0DD21D0078A08C /* UIFont+.swift in Sources */,

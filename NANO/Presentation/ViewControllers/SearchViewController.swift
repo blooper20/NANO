@@ -26,8 +26,6 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchView.songInfoTableView.rowHeight = UITableView.automaticDimension
     }
     
     //MARK: - Override

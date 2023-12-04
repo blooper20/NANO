@@ -31,6 +31,8 @@ final class SearchView: UIView {
         tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         
         let cellType = SongInfoCell.self
         tableView.register(cellType, forCellReuseIdentifier: cellType.reuseIdentifier)
