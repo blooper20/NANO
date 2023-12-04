@@ -50,6 +50,8 @@
 		EEAD10C62B19BA920078A08C /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C52B19BA910078A08C /* PlaylistCell.swift */; };
 		EEAD10C92B19C0CC0078A08C /* MySongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10C82B19C0CC0078A08C /* MySongsView.swift */; };
 		EEAD10CB2B19C3B40078A08C /* MySongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */; };
+		EEAD10CE2B1DB8430078A08C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10CD2B1DB8430078A08C /* PopUpView.swift */; };
+		EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		EEAD10C52B19BA910078A08C /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		EEAD10C82B19C0CC0078A08C /* MySongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongsView.swift; sourceTree = "<group>"; };
 		EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongsViewController.swift; sourceTree = "<group>"; };
+		EEAD10CD2B1DB8430078A08C /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +288,7 @@
 				EEAD10922B0DC63B0078A08C /* ChoiceViewController.swift */,
 				EEAD10C02B1705810078A08C /* SearchViewController.swift */,
 				EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */,
+				EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 		EEAD10942B0DC6970078A08C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD10CC2B1DB8260078A08C /* PopUp */,
 				EEAD10C72B19C0A70078A08C /* MySongs */,
 				EEAD10B12B14887B0078A08C /* Search */,
 				EEAD10972B0DC7660078A08C /* Choice */,
@@ -395,6 +401,22 @@
 				EEAD10C82B19C0CC0078A08C /* MySongsView.swift */,
 			);
 			path = MySongs;
+			sourceTree = "<group>";
+		};
+		EEAD10CC2B1DB8260078A08C /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD10CF2B1DBDE10078A08C /* SubViews */,
+				EEAD10CD2B1DB8430078A08C /* PopUpView.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		EEAD10CF2B1DBDE10078A08C /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +570,7 @@
 				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
 				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
+				EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */,
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,
 				EEAD102B2AFB6D520078A08C /* AppDelegate.swift in Sources */,
 				EEAD10962B0DC6B40078A08C /* ChoiceView.swift in Sources */,
@@ -556,6 +579,7 @@
 				EEAD10BB2B15CE520078A08C /* SongInfoCell.swift in Sources */,
 				EEAD10C92B19C0CC0078A08C /* MySongsView.swift in Sources */,
 				EEAD10882B07431D0078A08C /* SearchViewModel.swift in Sources */,
+				EEAD10CE2B1DB8430078A08C /* PopUpView.swift in Sources */,
 				EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */,
 				EEAD10A42B0DCFF70078A08C /* UIColor+.swift in Sources */,
 				EEAD10C62B19BA920078A08C /* PlaylistCell.swift in Sources */,
