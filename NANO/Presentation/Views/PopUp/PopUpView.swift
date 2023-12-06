@@ -29,6 +29,7 @@ final class PopUpView: UIView {
     
     private lazy var dismissButton: UIButton = {
         let button = UIButton()
+        button.setImage(UIImage(systemName: "arrowshape.turn.up.backward.fill"), for: .normal)
         
         return button
     }()
@@ -68,12 +69,13 @@ extension PopUpView {
         self.dimView.addSubview(popupView)
         popupView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
         }
         
         self.popupView.addSubview(dismissButton)
         dismissButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(calculatingHeight(height: 30))
-            make.right.equalToSuperview().offset(calculatingWidth(width: 30))
+            make.right.equalToSuperview().inset(calculatingWidth(width: 30))
             make.width.height.equalTo(50)
         }
         

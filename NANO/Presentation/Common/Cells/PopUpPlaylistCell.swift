@@ -1,30 +1,21 @@
 //
-//  PlaylistCell.swift
+//  PopUpPlaylistCell.swift
 //  NANO
 //
-//  Created by DwaeWoo on 2023/12/01.
+//  Created by DwaeWoo on 2023/12/06.
 //
 
 import UIKit
 import SnapKit
 
-final class PlaylistCell: UITableViewCell {
-    
+final class PopUpPlaylistCell: UITableViewCell {
+
     //MARK: - Declaration
-    private lazy var cellBackgroundView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .main
-        view.layer.cornerRadius = 15
-        view.layer.masksToBounds = true
-        
-        return view
-    }()
-    
     private lazy var brandLabel: UILabel = {
        let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.cellSubText
-        label.textColor = .white
+        label.font = UIFont.cellMainText
+        label.textColor = .black
         label.sizeToFit()
         
         return label
@@ -33,7 +24,7 @@ final class PlaylistCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
        let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.cellMainText
+        label.font = UIFont.cellSmallText
         label.sizeToFit()
         
         return label
@@ -60,24 +51,18 @@ final class PlaylistCell: UITableViewCell {
     }
 }
 
-extension PlaylistCell {
+extension PopUpPlaylistCell {
     
     //MARK: - Function
     private func setUpSubViews() {
         
-        self.addSubview(cellBackgroundView)
-        cellBackgroundView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview()
-            make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 7.5))
-        }
-        
-        cellBackgroundView.addSubview(brandLabel)
+        self.addSubview(brandLabel)
         brandLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(calculatingWidth(width: 16))
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 13))
         }
         
-        cellBackgroundView.addSubview(titleLabel)
+        self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(brandLabel.snp.right).offset(calculatingWidth(width: 45))
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 13))
@@ -85,7 +70,7 @@ extension PlaylistCell {
     }
 }
 
-extension PlaylistCell: ReuseIdentifying {
+extension PopUpPlaylistCell: ReuseIdentifying {
     
     struct Model {
         let brand: String

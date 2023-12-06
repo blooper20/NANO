@@ -1,5 +1,5 @@
 //
-//  OnlyTitleButton.swift
+//  MainButton.swift
 //  NANO
 //
 //  Created by DwaeWoo on 2023/11/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OnlyTitleButton: UIButton {
+final class MainButton: UIButton {
     
     //MARK: - Declaration
     private var title: String
@@ -37,7 +37,7 @@ final class OnlyTitleButton: UIButton {
     }
 }
 
-extension OnlyTitleButton {
+extension MainButton {
     
     func setUpSubView() {
         self.backgroundColor = .main

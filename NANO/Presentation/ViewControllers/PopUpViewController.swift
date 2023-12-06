@@ -16,7 +16,7 @@ final class PopUpViewController: UIViewController {
     private var constentsView: UIView
     
     //MARK: - Initialize
-    init(snapshotView: UIView, popupView: PopUpView, constentsView: UIView) {
+    init(snapshotView: UIView, constentsView: UIView) {
         self.snapshotView = snapshotView
         self.constentsView = constentsView
         self.popupView = PopUpView(constentsView: constentsView)
