@@ -54,6 +54,9 @@
 		EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */; };
 		EEAD10D32B205B2C0078A08C /* PopUpPlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D22B205B2C0078A08C /* PopUpPlaylistCell.swift */; };
 		EEAD10D52B205E660078A08C /* PlaylistSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */; };
+		EEAD10D72B453C830078A08C /* CreateNewPlayllistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */; };
+		EEAD10D92B4541C50078A08C /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */; };
+		EEAD10DB2B4548A50078A08C /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DA2B4548A50078A08C /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		EEAD10D22B205B2C0078A08C /* PopUpPlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPlaylistCell.swift; sourceTree = "<group>"; };
 		EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSelectView.swift; sourceTree = "<group>"; };
+		EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPlayllistView.swift; sourceTree = "<group>"; };
+		EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
+		EEAD10DA2B4548A50078A08C /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +349,7 @@
 				EEAD10A32B0DCFF70078A08C /* UIColor+.swift */,
 				EEAD10A52B0DD21D0078A08C /* UIFont+.swift */,
 				EEAD10C32B1720C30078A08C /* UITableView+.swift */,
+				EEAD10DA2B4548A50078A08C /* UIButton+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10AF2B0DE46F0078A08C /* MainButton.swift */,
+				EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -421,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */,
+				EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -570,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAD10AC2B0DDCD60078A08C /* BrandPickerView.swift in Sources */,
+				EEAD10DB2B4548A50078A08C /* UIButton+.swift in Sources */,
 				EEAD10B82B15C0780078A08C /* MainSearchBar.swift in Sources */,
 				EEAD102F2AFB6D520078A08C /* ViewController.swift in Sources */,
 				EEAD10CB2B19C3B40078A08C /* MySongsViewController.swift in Sources */,
@@ -595,9 +605,11 @@
 				EEAD10A62B0DD21D0078A08C /* UIFont+.swift in Sources */,
 				EEAD10B02B0DE46F0078A08C /* MainButton.swift in Sources */,
 				EEAD10932B0DC63B0078A08C /* ChoiceViewController.swift in Sources */,
+				EEAD10D72B453C830078A08C /* CreateNewPlayllistView.swift in Sources */,
 				EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */,
 				EEAD107E2B0359350078A08C /* SongsResponse.swift in Sources */,
 				EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */,
+				EEAD10D92B4541C50078A08C /* UnderLineTextField.swift in Sources */,
 				EEAD108C2B0754FC0078A08C /* ReleaseViewModel.swift in Sources */,
 				EEAD10D52B205E660078A08C /* PlaylistSelectView.swift in Sources */,
 				EEAD109A2B0DC8010078A08C /* TopLabelView.swift in Sources */,
