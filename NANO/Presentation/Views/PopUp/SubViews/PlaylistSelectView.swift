@@ -30,7 +30,8 @@ final class PlaylistSelectView: UIView {
     
     private lazy var plusButton: MainButton = {
         let button = MainButton(title: "새 예약목록")
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        let emojiConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold, scale: .medium)
+        button.setImage(UIImage(systemName: "plus", withConfiguration: emojiConfig), for: .normal)
         button.tintColor = .black
 
         return button
@@ -63,9 +64,8 @@ extension PlaylistSelectView {
         self.addSubview(plusButton)
         plusButton.snp.makeConstraints { make in
             make.top.equalTo(playlistTableView.snp.bottom).offset(calculatingHeight(height: 10))
-            make.bottom.equalToSuperview().inset(calculatingHeight(height: 10))
+            make.bottom.equalToSuperview().inset(calculatingHeight(height: 20))
             make.right.equalToSuperview().inset(calculatingWidth(width: 10))
-            make.height.equalTo(calculatingHeight(height: 55))
         }
     }
 }

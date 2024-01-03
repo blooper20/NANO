@@ -35,6 +35,12 @@ final class MainButton: UIButton {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
+    
+    override var intrinsicContentSize: CGSize {
+        
+        let newSize: CGSize = .init(width: super.intrinsicContentSize.width + 20, height: super.intrinsicContentSize.height + 30)
+        return newSize
+    }
 }
 
 extension MainButton {
@@ -45,5 +51,6 @@ extension MainButton {
         self.layer.masksToBounds = true
         self.setTitle(title, for: .normal)
         self.setTitleColor(.black, for: .normal)
+        self.titleLabel?.font = UIFont.buttonTitle
     }
 }
