@@ -15,9 +15,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let constentsView = CreateNewPlaylistView()
-        window?.rootViewController = PopUpViewController(snapshotView: UIView(), constentsView: constentsView)
+        let releaseViewController = MySongViewController(playlistTitle: "tlltl")
+        let navigationController = UINavigationController(rootViewController: releaseViewController)
+        
+        // 윈도우의 루트 뷰 컨트롤러로 UINavigationController 설정
+        window?.rootViewController = navigationController
+        
+        // 윈도우 표시
         window?.makeKeyAndVisible()
+        
+//        window?.rootViewController = ReleaseViewController()
+//        window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

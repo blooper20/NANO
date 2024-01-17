@@ -57,6 +57,9 @@
 		EEAD10D72B453C830078A08C /* CreateNewPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */; };
 		EEAD10D92B4541C50078A08C /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */; };
 		EEAD10DB2B4548A50078A08C /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DA2B4548A50078A08C /* UIButton+.swift */; };
+		EEAD10DE2B57A58F0078A08C /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DD2B57A58F0078A08C /* SongListView.swift */; };
+		EEAD10E02B57A8160078A08C /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */; };
+		EEAD10E22B57AEED0078A08C /* MySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10E12B57AEED0078A08C /* MySongViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,9 @@
 		EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPlaylistView.swift; sourceTree = "<group>"; };
 		EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		EEAD10DA2B4548A50078A08C /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		EEAD10DD2B57A58F0078A08C /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
+		EEAD10E12B57AEED0078A08C /* MySongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +305,8 @@
 				EEAD10C02B1705810078A08C /* SearchViewController.swift */,
 				EEAD10CA2B19C3B40078A08C /* MySongsViewController.swift */,
 				EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */,
+				EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */,
+				EEAD10E12B57AEED0078A08C /* MySongViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 		EEAD10942B0DC6970078A08C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD10DD2B57A58F0078A08C /* SongListView.swift */,
 				EEAD10CC2B1DB8260078A08C /* PopUp */,
 				EEAD10C72B19C0A70078A08C /* MySongs */,
 				EEAD10B12B14887B0078A08C /* Search */,
@@ -585,6 +594,7 @@
 				EEAD10CB2B19C3B40078A08C /* MySongsViewController.swift in Sources */,
 				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
+				EEAD10E02B57A8160078A08C /* ReleaseViewController.swift in Sources */,
 				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
 				EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */,
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,
@@ -607,8 +617,10 @@
 				EEAD10932B0DC63B0078A08C /* ChoiceViewController.swift in Sources */,
 				EEAD10D72B453C830078A08C /* CreateNewPlaylistView.swift in Sources */,
 				EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */,
+				EEAD10DE2B57A58F0078A08C /* SongListView.swift in Sources */,
 				EEAD107E2B0359350078A08C /* SongsResponse.swift in Sources */,
 				EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */,
+				EEAD10E22B57AEED0078A08C /* MySongViewController.swift in Sources */,
 				EEAD10D92B4541C50078A08C /* UnderLineTextField.swift in Sources */,
 				EEAD108C2B0754FC0078A08C /* ReleaseViewModel.swift in Sources */,
 				EEAD10D52B205E660078A08C /* PlaylistSelectView.swift in Sources */,
