@@ -102,7 +102,7 @@ extension CreateNewPlaylistView {
 
 extension CreateNewPlaylistView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // TextField 비활성화
+        textField.resignFirstResponder()
         
         return true
     }

@@ -60,6 +60,7 @@
 		EEAD10DE2B57A58F0078A08C /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DD2B57A58F0078A08C /* SongListView.swift */; };
 		EEAD10E02B57A8160078A08C /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */; };
 		EEAD10E22B57AEED0078A08C /* MySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10E12B57AEED0078A08C /* MySongViewController.swift */; };
+		EEAD10E42B57B5EF0078A08C /* SongDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10E32B57B5EF0078A08C /* SongDetailInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		EEAD10DD2B57A58F0078A08C /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 		EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
 		EEAD10E12B57AEED0078A08C /* MySongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongViewController.swift; sourceTree = "<group>"; };
+		EEAD10E32B57B5EF0078A08C /* SongDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +441,7 @@
 			children = (
 				EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */,
 				EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */,
+				EEAD10E32B57B5EF0078A08C /* SongDetailInfoView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				EEAD10C92B19C0CC0078A08C /* MySongsView.swift in Sources */,
 				EEAD10882B07431D0078A08C /* SearchViewModel.swift in Sources */,
 				EEAD10CE2B1DB8430078A08C /* PopUpView.swift in Sources */,
+				EEAD10E42B57B5EF0078A08C /* SongDetailInfoView.swift in Sources */,
 				EEAD10832B073D420078A08C /* ReleaseUseCase.swift in Sources */,
 				EEAD10D32B205B2C0078A08C /* PopUpPlaylistCell.swift in Sources */,
 				EEAD10A42B0DCFF70078A08C /* UIColor+.swift in Sources */,

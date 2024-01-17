@@ -15,4 +15,6 @@ extension UIFont {
     static let cellMainText = UIFont.systemFont(ofSize: 20, weight: .heavy)
     static let cellSmallText = UIFont.systemFont(ofSize: 12, weight: .regular)
     static let buttonTitle = UIFont.systemFont(ofSize: 20, weight: .heavy)
+    static let labelText = UIFont.systemFont(ofSize: 20, weight: .medium)
+    static let labelSubText = UIFont.systemFont(ofSize: 17, weight: .light)
 }
