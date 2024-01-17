@@ -13,12 +13,12 @@ final class PopUpViewController: UIViewController {
     //MARK: - Declaration
     private var snapshotView: UIView
     private var popupView: PopUpView
-    private var constentsView: UIView
+    private var contentsView: UIView
     
     //MARK: - Initialize
     init(snapshotView: UIView, constentsView: UIView) {
         self.snapshotView = snapshotView
-        self.constentsView = constentsView
+        self.contentsView = constentsView
         self.popupView = PopUpView(constentsView: constentsView)
         super.init(nibName: nil, bundle: nil)
     }

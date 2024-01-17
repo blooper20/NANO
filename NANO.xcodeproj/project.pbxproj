@@ -54,7 +54,7 @@
 		EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */; };
 		EEAD10D32B205B2C0078A08C /* PopUpPlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D22B205B2C0078A08C /* PopUpPlaylistCell.swift */; };
 		EEAD10D52B205E660078A08C /* PlaylistSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */; };
-		EEAD10D72B453C830078A08C /* CreateNewPlayllistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */; };
+		EEAD10D72B453C830078A08C /* CreateNewPlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */; };
 		EEAD10D92B4541C50078A08C /* UnderLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */; };
 		EEAD10DB2B4548A50078A08C /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DA2B4548A50078A08C /* UIButton+.swift */; };
 /* End PBXBuildFile section */
@@ -120,7 +120,7 @@
 		EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		EEAD10D22B205B2C0078A08C /* PopUpPlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpPlaylistCell.swift; sourceTree = "<group>"; };
 		EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSelectView.swift; sourceTree = "<group>"; };
-		EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPlayllistView.swift; sourceTree = "<group>"; };
+		EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPlaylistView.swift; sourceTree = "<group>"; };
 		EEAD10D82B4541C50078A08C /* UnderLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextField.swift; sourceTree = "<group>"; };
 		EEAD10DA2B4548A50078A08C /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -429,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAD10D42B205E660078A08C /* PlaylistSelectView.swift */,
-				EEAD10D62B453C830078A08C /* CreateNewPlayllistView.swift */,
+				EEAD10D62B453C830078A08C /* CreateNewPlaylistView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -605,7 +605,7 @@
 				EEAD10A62B0DD21D0078A08C /* UIFont+.swift in Sources */,
 				EEAD10B02B0DE46F0078A08C /* MainButton.swift in Sources */,
 				EEAD10932B0DC63B0078A08C /* ChoiceViewController.swift in Sources */,
-				EEAD10D72B453C830078A08C /* CreateNewPlayllistView.swift in Sources */,
+				EEAD10D72B453C830078A08C /* CreateNewPlaylistView.swift in Sources */,
 				EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */,
 				EEAD107E2B0359350078A08C /* SongsResponse.swift in Sources */,
 				EEAD102D2AFB6D520078A08C /* SceneDelegate.swift in Sources */,

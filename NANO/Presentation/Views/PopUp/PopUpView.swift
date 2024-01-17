@@ -35,18 +35,18 @@ final class PopUpView: UIView {
         return button
     }()
     
-    private var constentsView: UIView
+    private var contentsView: UIView
 
     //MARK: - Initialize
     convenience init(constentsView: UIView) {
         self.init()
-        self.constentsView = constentsView
+        self.contentsView = constentsView
         
         setUpViews()
     }
     
     override init(frame: CGRect) {
-        self.constentsView = UIView()
+        self.contentsView = UIView()
         super.init(frame: frame)
         
         setUpViews()
@@ -80,8 +80,8 @@ extension PopUpView {
             make.width.height.equalTo(50)
         }
         
-        self.popupView.addSubview(constentsView)
-        constentsView.snp.makeConstraints { make in
+        self.popupView.addSubview(contentsView)
+        contentsView.snp.makeConstraints { make in
             make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))

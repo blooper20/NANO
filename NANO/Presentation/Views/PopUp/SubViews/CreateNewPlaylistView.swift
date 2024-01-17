@@ -1,5 +1,5 @@
 //
-//  CreateNewPlayllistView.swift
+//  CreateNewPlaylistView.swift
 //  NANO
 //
 //  Created by DwaeWoo on 2024/01/03.
@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-final class CreateNewPlayllistView: UIView {
-
+final class CreateNewPlaylistView: UIView {
+    
     //MARK: - Declaration
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -25,6 +25,10 @@ final class CreateNewPlayllistView: UIView {
         let textField = UnderLineTextField()
         textField.placeholder = "제목"
         textField.borderStyle = .none
+        textField.delegate = self
+        textField.autocorrectionType = .no
+        textField.spellCheckingType = .no
+        textField.returnKeyType = .done
         
         return textField
     }()
@@ -35,6 +39,7 @@ final class CreateNewPlayllistView: UIView {
         button.configuration = UIButton.cancelConfig
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
+        button.sizeToFit()
         
         return button
     }()
@@ -55,9 +60,13 @@ final class CreateNewPlayllistView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.endEditing(true)
+    }
 }
 
-extension CreateNewPlayllistView {
+extension CreateNewPlaylistView {
     
     //MARK: - Function
     private func setUpViews() {
@@ -71,7 +80,7 @@ extension CreateNewPlayllistView {
         self.addSubview(textField)
         textField.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(calculatingHeight(height: 50))
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 55))
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 30))
         }
         
         self.addSubview(cancelButton)
@@ -88,5 +97,13 @@ extension CreateNewPlayllistView {
             make.left.equalTo(cancelButton.snp.right).offset(calculatingWidth(width:10))
             make.right.equalToSuperview().inset(calculatingWidth(width: 10))
         }
+    }
+}
+
+extension CreateNewPlaylistView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // TextField 비활성화
+        
+        return true
     }
 }
