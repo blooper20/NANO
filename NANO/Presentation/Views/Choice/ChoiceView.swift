@@ -13,7 +13,7 @@ final class ChoiceView: UIView {
     //MARK: - Declaration
     private let topLabelView = TopLabelView()
     let brandPickerView = BrandPickerView()
-    private let onlyTitleButton = OnlyTitleButton(title: "다음")
+    private let onlyTitleButton = MainButton(title: "다음")
     
     //MARK: - Initialize
     override init(frame: CGRect) {

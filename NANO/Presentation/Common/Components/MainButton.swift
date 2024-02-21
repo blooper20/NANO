@@ -1,5 +1,5 @@
 //
-//  OnlyTitleButton.swift
+//  MainButton.swift
 //  NANO
 //
 //  Created by DwaeWoo on 2023/11/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OnlyTitleButton: UIButton {
+final class MainButton: UIButton {
     
     //MARK: - Declaration
     private var title: String
@@ -35,9 +35,15 @@ final class OnlyTitleButton: UIButton {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
+    
+    override var intrinsicContentSize: CGSize {
+        
+        let newSize: CGSize = .init(width: super.intrinsicContentSize.width + 20, height: super.intrinsicContentSize.height + 30)
+        return newSize
+    }
 }
 
-extension OnlyTitleButton {
+extension MainButton {
     
     func setUpSubView() {
         self.backgroundColor = .main
@@ -45,5 +51,6 @@ extension OnlyTitleButton {
         self.layer.masksToBounds = true
         self.setTitle(title, for: .normal)
         self.setTitleColor(.black, for: .normal)
+        self.titleLabel?.font = UIFont.buttonTitle
     }
 }
