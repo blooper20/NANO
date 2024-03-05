@@ -13,7 +13,7 @@ final class ChoiceView: UIView {
     //MARK: - Declaration
     private let topLabelView = TopLabelView()
     let brandPickerView = BrandPickerView()
-    private let onlyTitleButton = MainButton(title: "다음")
+    let onlyTitleButton = MainButton(title: "다음")
     
     //MARK: - Initialize
     override init(frame: CGRect) {
@@ -46,7 +46,7 @@ extension ChoiceView {
         self.addSubview(onlyTitleButton)
         onlyTitleButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 27))
-            make.bottom.equalToSuperview().inset(calculatingHeight(height: 40))
+            make.bottom.equalToSuperview().inset(calculatingHeight(height: 50))
             make.height.equalTo(calculatingHeight(height: 50))
         }
     }

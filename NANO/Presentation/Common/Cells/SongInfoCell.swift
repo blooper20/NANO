@@ -15,6 +15,7 @@ final class SongInfoCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.cellMainText
+        label.textColor = .black
         label.sizeToFit()
         
         return label
@@ -25,6 +26,7 @@ final class SongInfoCell: UITableViewCell {
         label.numberOfLines = 2
         label.textAlignment = .left
         label.font = UIFont.cellSubText
+        label.textColor = .black
         label.sizeToFit()
         
         return label
@@ -34,6 +36,7 @@ final class SongInfoCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .left
         label.font = UIFont.cellSubText
+        label.textColor = .black
         label.sizeToFit()
         
         return label
@@ -43,6 +46,7 @@ final class SongInfoCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = .clear
         setUpSubViews()
     }
     

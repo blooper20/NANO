@@ -15,7 +15,7 @@ final class ChoiceViewController: UIViewController {
         let view = ChoiceView()
         view.brandPickerView.pickerView.dataSource = self
         view.brandPickerView.pickerView.delegate = self
-        
+        view.onlyTitleButton.addTarget(self, action: #selector(onlyTitleButtonTapped), for: .touchUpInside)
         return view
     }()
     let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
@@ -28,7 +28,6 @@ final class ChoiceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -43,13 +42,14 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return 1
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return brandName.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return brandName[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let color = UIColor.black
+
+        return NSAttributedString(string: brandName[row], attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -58,5 +58,13 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return calculatingWidth(width: 200)
+    }
+}
+
+extension ChoiceViewController {
+    //MARK: - Selector
+    @objc func onlyTitleButtonTapped() {
+        let customTabBarController = CustomTabBarController()
+        self.navigationController?.pushViewController(customTabBarController, animated: true)
     }
 }

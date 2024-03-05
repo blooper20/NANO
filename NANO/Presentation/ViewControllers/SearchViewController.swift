@@ -24,6 +24,10 @@ final class SearchViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

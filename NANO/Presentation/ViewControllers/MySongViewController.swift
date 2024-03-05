@@ -49,7 +49,6 @@ class MySongViewController: UIViewController {
     private func navigationControll() {
         navigationController?.navigationBar.topItem?.title = self.playlistTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(modifyMode))
-        
     }
 }
 

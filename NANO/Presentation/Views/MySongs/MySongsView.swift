@@ -47,7 +47,7 @@ extension MySongsView {
         self.addSubview(playlistTableView)
         playlistTableView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 20))
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(calculatingHeight(height: 50))
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(calculatingHeight(height: 20))
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }

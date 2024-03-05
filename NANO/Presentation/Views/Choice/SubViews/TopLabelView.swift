@@ -16,6 +16,7 @@ final class TopLabelView: UIView {
         label.font = UIFont.mainTitle
         label.text = "어떤 노래방인가요?"
         label.textAlignment = .left
+        label.textColor = .black
         label.asColor(targetString: "노래방", color: .main)
         
         return label
