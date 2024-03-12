@@ -7,15 +7,25 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class ChoiceViewController: UIViewController {
     
     //MARK: - Declaration
+    let disposebag = DisposeBag()
+    
     private lazy var choiceView: ChoiceView = {
         let view = ChoiceView()
         view.brandPickerView.pickerView.dataSource = self
         view.brandPickerView.pickerView.delegate = self
-        view.onlyTitleButton.addTarget(self, action: #selector(onlyTitleButtonTapped), for: .touchUpInside)
+        
+        view.onlyTitleButton.rx.tap.subscribe(onNext: {
+            let customTabBarController = CustomTabBarController()
+            self.navigationController?.pushViewController(customTabBarController, animated: true)
+            AppState.shared.brand = self.brand
+        }).disposed(by: disposebag)
+        
         return view
     }()
     
@@ -66,14 +76,5 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return calculatingWidth(width: 200)
-    }
-}
-
-extension ChoiceViewController {
-    //MARK: - Selector
-    @objc func onlyTitleButtonTapped() {
-        let customTabBarController = CustomTabBarController()
-        self.navigationController?.pushViewController(customTabBarController, animated: true)
-        AppState.shared.brand = brand
     }
 }
