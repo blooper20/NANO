@@ -18,7 +18,10 @@ final class ChoiceViewController: UIViewController {
         view.onlyTitleButton.addTarget(self, action: #selector(onlyTitleButtonTapped), for: .touchUpInside)
         return view
     }()
+    
     let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
+    
+    private var brand = ""
     
     //MARK: - View Cycle
     override func loadView() {
@@ -46,9 +49,14 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return brandName.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        brand = brandName[row]
+    }
+    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let color = UIColor.black
-
+        
         return NSAttributedString(string: brandName[row], attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
@@ -66,5 +74,6 @@ extension ChoiceViewController {
     @objc func onlyTitleButtonTapped() {
         let customTabBarController = CustomTabBarController()
         self.navigationController?.pushViewController(customTabBarController, animated: true)
+        AppState.shared.brand = brand
     }
 }

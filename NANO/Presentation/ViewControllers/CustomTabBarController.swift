@@ -19,14 +19,14 @@ final class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate = self
+        self.delegate = self
         setTabBar()
     }
 }
 
+//MARK: - Function
 extension CustomTabBarController {
     
-    //MARK: - Function
     private func configureTapBarItem(tab: UIViewController, title: String, image: String, tag: Int) {
         tab.title = title
         let emojiConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold, scale: .medium)
@@ -45,6 +45,7 @@ extension CustomTabBarController {
     }
 }
 
+//MARK: - Delegate
 extension CustomTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

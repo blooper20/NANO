@@ -20,6 +20,12 @@ final class PlaylistCell: UITableViewCell {
         return view
     }()
     
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        
+        return view
+    }()
+    
     private lazy var brandLabel: UILabel = {
        let label = UILabel()
         label.textAlignment = .left
@@ -72,13 +78,19 @@ extension PlaylistCell {
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 7.5))
         }
         
-        cellBackgroundView.addSubview(brandLabel)
+        self.contentView.addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 7.5))
+        }
+        
+        containerView.addSubview(brandLabel)
         brandLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(calculatingWidth(width: 16))
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 13))
         }
         
-        cellBackgroundView.addSubview(titleLabel)
+        containerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(brandLabel.snp.right).offset(calculatingWidth(width: 45))
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 13))
