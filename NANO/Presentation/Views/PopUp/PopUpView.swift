@@ -27,7 +27,7 @@ final class PopUpView: UIView {
         return view
     }()
     
-    private lazy var dismissButton: UIButton = {
+    lazy var dismissButton: UIButton = {
         let button = UIButton()
         let emojiConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .bold, scale: .large)
         button.setImage(UIImage(systemName: "xmark", withConfiguration: emojiConfig), for: .normal)

@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class PopUpViewController: UIViewController {
     
@@ -14,12 +16,13 @@ final class PopUpViewController: UIViewController {
     private var snapshotView: UIView
     private var popupView: PopUpView
     private var contentsView: UIView
+    private let disposebag = DisposeBag()
     
     //MARK: - Initialize
-    init(snapshotView: UIView, constentsView: UIView) {
+    init(snapshotView: UIView, contentView: UIView) {
         self.snapshotView = snapshotView
-        self.contentsView = constentsView
-        self.popupView = PopUpView(constentsView: constentsView)
+        self.contentsView = contentView
+        self.popupView = PopUpView(constentsView: contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,10 +36,13 @@ final class PopUpViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpView()
+        setDismissButton()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }
 
@@ -49,5 +55,11 @@ extension PopUpViewController {
         popupView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setDismissButton() {
+        popupView.dismissButton.rx.tap.subscribe(onNext: {
+            self.dismiss(animated: true)
+        }).disposed(by: disposebag)
     }
 }
