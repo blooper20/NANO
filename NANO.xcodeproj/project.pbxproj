@@ -16,13 +16,9 @@
 		EEAD104C2AFB6D530078A08C /* NANOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD104B2AFB6D530078A08C /* NANOUITests.swift */; };
 		EEAD104E2AFB6D530078A08C /* NANOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD104D2AFB6D530078A08C /* NANOUITestsLaunchTests.swift */; };
 		EEAD105C2AFB7AE70078A08C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD105B2AFB7AE70078A08C /* SnapKit */; };
-		EEAD105E2AFB7AE70078A08C /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */; };
 		EEAD10652AFB7B370078A08C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10642AFB7B370078A08C /* RxCocoa */; };
-		EEAD10672AFB7B370078A08C /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */; };
 		EEAD10692AFB7B370078A08C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD10682AFB7B370078A08C /* RxRelay */; };
-		EEAD106B2AFB7B370078A08C /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */; };
 		EEAD106D2AFB7B370078A08C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106C2AFB7B370078A08C /* RxSwift */; };
-		EEAD106F2AFB7B370078A08C /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */; };
 		EEAD107A2B01F01D0078A08C /* Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10792B01F01D0078A08C /* Networks.swift */; };
 		EEAD107E2B0359350078A08C /* SongsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD107D2B0359350078A08C /* SongsResponse.swift */; };
 		EEAD10812B049BA70078A08C /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10802B049BA70078A08C /* SearchUseCase.swift */; };
@@ -61,6 +57,7 @@
 		EEAD10E02B57A8160078A08C /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */; };
 		EEAD10E22B57AEED0078A08C /* MySongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10E12B57AEED0078A08C /* MySongViewController.swift */; };
 		EEAD10E42B57B5EF0078A08C /* SongDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD10E32B57B5EF0078A08C /* SongDetailInfoView.swift */; };
+		EEE1C06C2B96F0BB001694CF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1C06B2B96F0BB001694CF /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +128,7 @@
 		EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
 		EEAD10E12B57AEED0078A08C /* MySongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySongViewController.swift; sourceTree = "<group>"; };
 		EEAD10E32B57B5EF0078A08C /* SongDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailInfoView.swift; sourceTree = "<group>"; };
+		EEE1C06B2B96F0BB001694CF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,13 +137,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEAD106D2AFB7B370078A08C /* RxSwift in Frameworks */,
-				EEAD106B2AFB7B370078A08C /* RxRelay-Dynamic in Frameworks */,
 				EEAD105C2AFB7AE70078A08C /* SnapKit in Frameworks */,
 				EEAD10692AFB7B370078A08C /* RxRelay in Frameworks */,
 				EEAD10652AFB7B370078A08C /* RxCocoa in Frameworks */,
-				EEAD106F2AFB7B370078A08C /* RxSwift-Dynamic in Frameworks */,
-				EEAD105E2AFB7AE70078A08C /* SnapKit-Dynamic in Frameworks */,
-				EEAD10672AFB7B370078A08C /* RxCocoa-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +303,7 @@
 				EEAD10D02B1DC3B30078A08C /* PopUpViewController.swift */,
 				EEAD10DF2B57A8160078A08C /* ReleaseViewController.swift */,
 				EEAD10E12B57AEED0078A08C /* MySongViewController.swift */,
+				EEE1C06B2B96F0BB001694CF /* CustomTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -464,13 +459,9 @@
 			name = NANO;
 			packageProductDependencies = (
 				EEAD105B2AFB7AE70078A08C /* SnapKit */,
-				EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */,
 				EEAD10642AFB7B370078A08C /* RxCocoa */,
-				EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */,
 				EEAD10682AFB7B370078A08C /* RxRelay */,
-				EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */,
 				EEAD106C2AFB7B370078A08C /* RxSwift */,
-				EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */,
 			);
 			productName = NANO;
 			productReference = EEAD10272AFB6D520078A08C /* NANO.app */;
@@ -598,6 +589,7 @@
 				EEAD10C42B1720C30078A08C /* UITableView+.swift in Sources */,
 				EEAD108A2B07480D0078A08C /* ViewModel.swift in Sources */,
 				EEAD10E02B57A8160078A08C /* ReleaseViewController.swift in Sources */,
+				EEE1C06C2B96F0BB001694CF /* CustomTabBarController.swift in Sources */,
 				EEAD10BF2B1604AC0078A08C /* Reusable.swift in Sources */,
 				EEAD10D12B1DC3B30078A08C /* PopUpViewController.swift in Sources */,
 				EEAD109E2B0DCF0C0078A08C /* UILabel+.swift in Sources */,
@@ -1003,40 +995,20 @@
 			package = EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		EEAD105D2AFB7AE70078A08C /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEAD105A2AFB7AE70078A08C /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
 		EEAD10642AFB7B370078A08C /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
-		};
-		EEAD10662AFB7B370078A08C /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
 		};
 		EEAD10682AFB7B370078A08C /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		EEAD106A2AFB7B370078A08C /* RxRelay-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxRelay-Dynamic";
-		};
 		EEAD106C2AFB7B370078A08C /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		EEAD106E2AFB7B370078A08C /* RxSwift-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEAD105F2AFB7B370078A08C /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxSwift-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

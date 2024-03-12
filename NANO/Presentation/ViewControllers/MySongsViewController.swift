@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MySongsViewController: UIViewController {
+final class MySongsViewController: UIViewController {
 
     //MARK: - Declaration
     private lazy var mySongsView: MySongsView = {
@@ -18,6 +18,15 @@ class MySongsViewController: UIViewController {
         return view
     }()
     
+    private lazy var editmodeButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "수정"
+        button.target = self
+        button.action = #selector(editmodeButtonTapped)
+        
+        return button
+    }()
+    
     //MARK: - View Cycle
     override func loadView() {
         self.view = mySongsView
@@ -26,6 +35,22 @@ class MySongsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavigationItem()
+    }
+}
+
+extension MySongsViewController {
+    
+    //MARK: - Function
+    private func setNavigationItem() {
+        self.navigationItem.title = "보관함"
+        self.navigationItem.rightBarButtonItem = editmodeButton
+    }
+    
+    @objc func editmodeButtonTapped() {
+        mySongsView.playlistTableView.isEditing.toggle()
+        editmodeButton.title = mySongsView.playlistTableView.isEditing ? "완료" : "수정"
     }
 }
 

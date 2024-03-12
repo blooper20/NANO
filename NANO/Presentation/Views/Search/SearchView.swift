@@ -28,7 +28,6 @@ final class SearchView: UIView {
     lazy var songInfoTableView: UITableView = {
         let tableView = UITableView()
         tableView.isScrollEnabled = true
-        tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false

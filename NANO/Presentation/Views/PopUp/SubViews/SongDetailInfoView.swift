@@ -111,31 +111,37 @@ extension SongDetailInfoView {
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(brandLabel.snp.bottom).offset(calculatingHeight(height: 5))
         }
+        
         self.addSubview(releaseLabel)
         releaseLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(numberLabel.snp.bottom).offset(calculatingHeight(height: 5))
         }
+        
         self.addSubview(songTitleLabel)
         songTitleLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(releaseLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
+        
         self.addSubview(singerLabel)
         singerLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(songTitleLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
+        
         self.addSubview(composerLabel)
         composerLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(singerLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
+        
         self.addSubview(lyricistLabel)
         lyricistLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
             make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
+        
         self.addSubview(reserveButton)
         reserveButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 76))

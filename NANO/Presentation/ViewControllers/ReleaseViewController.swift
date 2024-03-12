@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 final class ReleaseViewController: UIViewController {
     
@@ -34,32 +33,10 @@ final class ReleaseViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationControll()
-//        setUpViews()
-    }
-    
-    //MARK: - Navigation
-    private func navigationControll() {
-        navigationController?.navigationBar.topItem?.title = "신곡"
-    }
-}
-
-extension ReleaseViewController {
-    
-    //MARK: - Function
-    private func setUpViews() {
         
-        self.view.addSubview(songListView)
-        songListView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        self.navigationItem.title = "신곡"
     }
 }
 

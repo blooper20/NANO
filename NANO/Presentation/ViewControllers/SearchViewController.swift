@@ -26,6 +26,9 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "검색"
+        self.tabBarController?.navigationItem.title = "검색"
     }
     
     //MARK: - Override
