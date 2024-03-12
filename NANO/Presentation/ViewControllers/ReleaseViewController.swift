@@ -33,12 +33,10 @@ final class ReleaseViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.topItem?.title = ""
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "신곡"
     }
 }
 
