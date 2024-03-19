@@ -18,11 +18,29 @@ final class PopUpView: UIView {
         return view
     }()
     
-    private lazy var popupView: UIView = {
+    lazy var popupView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
+        
+        return view
+    }()
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "예약목록을 선택해주세요."
+        label.textAlignment = .left
+        label.font = UIFont.cellMainText
+        label.textColor = .black
+        label.sizeToFit()
+        
+        return label
+    }()
+    
+    lazy var sectionView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .main
         
         return view
     }()
@@ -35,18 +53,18 @@ final class PopUpView: UIView {
         return button
     }()
     
-    private var contentsView: UIView
+    var contentView: UIView
 
     //MARK: - Initialize
-    convenience init(constentsView: UIView) {
+    convenience init(contentView: UIView) {
         self.init()
-        self.contentsView = constentsView
+        self.contentView = contentView
         
         setUpViews()
     }
     
     override init(frame: CGRect) {
-        self.contentsView = UIView()
+        self.contentView = UIView()
         super.init(frame: frame)
         
         setUpViews()
@@ -80,11 +98,28 @@ extension PopUpView {
             make.width.height.equalTo(50)
         }
         
-        self.popupView.addSubview(contentsView)
-        contentsView.snp.makeConstraints { make in
+        self.popupView.addSubview(self.contentView)
+        contentView.snp.makeConstraints { make in
             make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
+        }
+    }
+    
+    func setUpNavigationView() {
+        
+        self.popupView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(dismissButton)
+            make.height.equalTo(dismissButton)
+            make.left.equalToSuperview().inset(calculatingWidth(width: 20))
+        }
+        
+        self.popupView.addSubview(sectionView)
+        sectionView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(calculatingHeight(height: 10))
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(1)
         }
     }
 }

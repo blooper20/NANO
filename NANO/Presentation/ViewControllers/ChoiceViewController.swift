@@ -13,7 +13,9 @@ import RxCocoa
 final class ChoiceViewController: UIViewController {
     
     //MARK: - Declaration
-    let disposebag = DisposeBag()
+    private var brand = "TJ"
+    private let disposebag = DisposeBag()
+    let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
     
     private lazy var choiceView: ChoiceView = {
         let view = ChoiceView()
@@ -29,9 +31,7 @@ final class ChoiceViewController: UIViewController {
         return view
     }()
     
-    let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
     
-    private var brand = ""
     
     //MARK: - View Cycle
     override func loadView() {

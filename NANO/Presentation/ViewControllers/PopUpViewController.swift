@@ -15,15 +15,17 @@ final class PopUpViewController: UIViewController {
     //MARK: - Declaration
     private var snapshotView: UIView
     private var popupView: PopUpView
-    private var contentsView: UIView
+    private var contentView: UIView & ContentViewDelegating
+    
     private let disposebag = DisposeBag()
     
     //MARK: - Initialize
-    init(snapshotView: UIView, contentView: UIView) {
+    init(snapshotView: UIView, contentView: UIView & ContentViewDelegating) {
         self.snapshotView = snapshotView
-        self.contentsView = contentView
-        self.popupView = PopUpView(constentsView: contentView)
+        self.contentView = contentView
+        self.popupView = PopUpView(contentView: contentView)
         super.init(nibName: nil, bundle: nil)
+        self.contentView.delegate = self
     }
     
     required init(coder: NSCoder) {
@@ -41,8 +43,6 @@ final class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
 }
 
@@ -61,5 +61,31 @@ extension PopUpViewController {
         popupView.dismissButton.rx.tap.subscribe(onNext: {
             self.dismiss(animated: true)
         }).disposed(by: disposebag)
+    }
+}
+
+//MARK: - Delegate
+extension PopUpViewController: ContentViewDelegate {
+    
+    func contentViewAction(presentView: UIView & ContentViewDelegating, navigation: Bool) {
+        
+        if navigation {
+            self.popupView.setUpNavigationView()
+        } else {
+            self.popupView.titleLabel.removeFromSuperview()
+            self.popupView.sectionView.removeFromSuperview()
+        }
+        
+        self.popupView.contentView.removeFromSuperview()
+        
+        self.popupView.addSubview(presentView)
+        
+        presentView.snp.makeConstraints { make in
+            make.top.equalTo(self.popupView.dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
+            make.bottom.equalTo(self.popupView.popupView)
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
+        }
+        
+        self.popupView.layoutSubviews()
     }
 }

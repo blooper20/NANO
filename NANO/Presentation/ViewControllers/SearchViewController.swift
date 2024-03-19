@@ -53,6 +53,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
             fatalError("snapshot 오류")
         }
+        
         let songInfoView = SongDetailInfoView()
         let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
         
