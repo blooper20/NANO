@@ -77,4 +77,8 @@ extension PopUpViewController: ContentViewDelegate {
         
         self.popupView.contentView = presentView
     }
+    
+    func dismissViewController() {
+        self.dismiss(animated: true)
+    }
 }

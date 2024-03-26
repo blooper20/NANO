@@ -46,11 +46,20 @@ final class CreateNewPlaylistView: UIView, ContentViewDelegating {
         button.layer.masksToBounds = true
         button.sizeToFit()
         
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            self?.delegate?.dismissViewController()
+        }).disposed(by: disposebag)
+        
         return button
     }()
     
     private lazy var createButton: MainButton = {
         let button = MainButton(title: "예약목록 생성")
+        
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            self?.delegate?.dismissViewController()
+            //FIXME: - 서버에 새로운 플레이리스트를 추가해주는 로직
+        }).disposed(by: disposebag)
         
         return button
     }()

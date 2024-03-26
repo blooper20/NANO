@@ -9,6 +9,7 @@ import UIKit
 
 protocol ContentViewDelegate: AnyObject {
     func contentViewAction(presentView: UIView & ContentViewDelegating, hasNavigation: Bool)
+    func dismissViewController()
 }
 
 protocol ContentViewDelegating {

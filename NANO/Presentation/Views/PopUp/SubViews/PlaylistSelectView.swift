@@ -101,4 +101,10 @@ extension PlaylistSelectView: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegate?.dismissViewController()
+        //FIXME: - 해당 플레이리스트에 곡을 추가해주는 로직
+    }
 }
