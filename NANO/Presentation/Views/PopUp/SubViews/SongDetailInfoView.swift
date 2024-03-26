@@ -111,9 +111,6 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     override init(frame: CGRect) {
         self.hasReserveButton = true
         super.init(frame: frame)
-        
-        setUpViews()
-        bind(songInfo: .init(no: "1234", title: "asdfasdjgfgfff kg k kg kfgfgkgfgjfgf", singer: "asdfasdf", composer: "ghghgghf", lyricist: "asdffgbb", release: "gggdgd"))
     }
     
     required init?(coder: NSCoder) {
@@ -160,8 +157,9 @@ extension SongDetailInfoView {
             make.top.equalTo(singerLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
         
+        self.addSubview(lyricistLabel)
+        
         if hasReserveButton {
-            self.addSubview(lyricistLabel)
             lyricistLabel.snp.makeConstraints { make in
                 make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
                 make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
@@ -174,7 +172,6 @@ extension SongDetailInfoView {
                 make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
             }
         } else {
-            self.addSubview(lyricistLabel)
             lyricistLabel.snp.makeConstraints { make in
                 make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
                 make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
