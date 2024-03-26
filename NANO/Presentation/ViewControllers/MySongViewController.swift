@@ -77,10 +77,40 @@ extension MySongViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
+            return
+        }
+        
+        let songInfoView = SongDetailInfoView(hasReserveButton: false)
+        let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
+        
+        songInfoView.delegate = popUpVC
+        
+        popUpVC.modalTransitionStyle = .crossDissolve
+        popUpVC.modalPresentationStyle = .fullScreen
+        
+        self.present(popUpVC, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songInfoCell = tableView.dequeueReusableCell(SongInfoCell.self, for: indexPath)
         songInfoCell.bind(model: .init(no: "no", title: "title", singer: "singer"))
         
         return songInfoCell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+//        resumeCategory[indexPath.section].items.remove(at: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+//        indexPath를 이용해서 row 옮기기
+//        resumeCategory[sourceIndexPath.section].items.remove(at: sourceIndexPath.row)
+//        resumeCategory[destinationIndexPath.section].items.insert(targetItem, at: destinationIndexPath.row)
     }
 }

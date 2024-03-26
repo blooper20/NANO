@@ -15,6 +15,7 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     //MARK: - Declaration
     weak var delegate: ContentViewDelegate?
     private let disposebag = DisposeBag()
+    var hasReserveButton: Bool
 
     var brandLabel: UILabel = {
         let label = UILabel()
@@ -99,7 +100,16 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     }()
     
     //MARK: - Initialize
+    convenience init(hasReserveButton: Bool) {
+        self.init()
+        self.hasReserveButton = hasReserveButton
+        setUpViews()
+        
+        bind(songInfo: .init(no: "1234", title: "asdfasdjgfgfff kg k kg kfgfgkgfgjfgf", singer: "asdfasdf", composer: "ghghgghf", lyricist: "asdffgbb", release: "gggdgd"))
+    }
+    
     override init(frame: CGRect) {
+        self.hasReserveButton = true
         super.init(frame: frame)
         
         setUpViews()
@@ -150,17 +160,26 @@ extension SongDetailInfoView {
             make.top.equalTo(singerLabel.snp.bottom).offset(calculatingHeight(height: 20))
         }
         
-        self.addSubview(lyricistLabel)
-        lyricistLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
-            make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
-        }
-        
-        self.addSubview(reserveButton)
-        reserveButton.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 76))
-            make.top.equalTo(lyricistLabel.snp.bottom).offset(calculatingHeight(height: 60))
-            make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+        if hasReserveButton {
+            self.addSubview(lyricistLabel)
+            lyricistLabel.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
+                make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
+            }
+            
+            self.addSubview(reserveButton)
+            reserveButton.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 76))
+                make.top.equalTo(lyricistLabel.snp.bottom).offset(calculatingHeight(height: 60))
+                make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+            }
+        } else {
+            self.addSubview(lyricistLabel)
+            lyricistLabel.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
+                make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
+                make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+            }
         }
     }
     
