@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ContentViewDelegate: AnyObject {
-    func contentViewAction(presentView: UIView & ContentViewDelegating, navigation: Bool)
+    func contentViewAction(presentView: UIView & ContentViewDelegating, hasNavigation: Bool)
 }
 
 protocol ContentViewDelegating {

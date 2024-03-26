@@ -58,8 +58,8 @@ extension PopUpViewController {
     }
     
     private func setDismissButton() {
-        popupView.dismissButton.rx.tap.subscribe(onNext: {
-            self.dismiss(animated: true)
+        popupView.dismissButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
         }).disposed(by: disposebag)
     }
 }
@@ -67,9 +67,9 @@ extension PopUpViewController {
 //MARK: - Delegate
 extension PopUpViewController: ContentViewDelegate {
     
-    func contentViewAction(presentView: UIView & ContentViewDelegating, navigation: Bool) {
+    func contentViewAction(presentView: UIView & ContentViewDelegating, hasNavigation: Bool) {
         
-        if navigation {
+        if hasNavigation {
             self.popupView.setUpNavigationView()
         } else {
             self.popupView.titleLabel.removeFromSuperview()
@@ -86,6 +86,6 @@ extension PopUpViewController: ContentViewDelegate {
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
         }
         
-        self.popupView.layoutSubviews()
+        self.popupView.setNeedsLayout()
     }
 }

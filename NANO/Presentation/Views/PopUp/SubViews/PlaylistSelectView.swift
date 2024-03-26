@@ -74,7 +74,7 @@ extension PlaylistSelectView {
     }
     
     private func setPlusButtonAction() {
-        plusButton.rx.tap.subscribe(onNext: {
+        plusButton.rx.tap.subscribe(onNext: { [weak self] in
             
         }).disposed(by: disposebag)
     }

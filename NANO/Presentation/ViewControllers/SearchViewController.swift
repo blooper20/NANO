@@ -51,7 +51,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
-            fatalError("snapshot 오류")
+            return
         }
         
         let songInfoView = SongDetailInfoView()
