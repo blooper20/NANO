@@ -39,23 +39,23 @@ class MySongViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationControll()
+        setNavigationController()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     //MARK: - Navigation
-    private func navigationControll() {
-        navigationController?.navigationBar.topItem?.title = self.playlistTitle
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(modifyMode))
+    private func setNavigationController() {
+        navigationItem.title = self.playlistTitle
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(setModifyMode))
     }
 }
 
 extension MySongViewController {
     
     //MARK: - selector
-    @objc private func modifyMode() {
+    @objc private func setModifyMode() {
         if navigationItem.rightBarButtonItem?.title == "수정" {
             self.songListView.songInfoTableView.isEditing = true
             navigationItem.rightBarButtonItem?.title = "수정완료"
