@@ -20,12 +20,7 @@ final class SearchUseCase {
 extension SearchUseCase {
     
     //MARK: - Title
-    func getSearchTitle(brand: String, title: String) -> Observable<SongsResponse> {
-        return networks.getData(url: self.networks.getSearchURL() + "brand=\(brand)&title=\(title)")
-    }
-    
-    //MARK: - Singer
-    func getSearchSinger(brand: String, singer: String) -> Observable<SongsResponse> {
-        return networks.getData(url: self.networks.getReleaseURL() + "brand=\(brand)&singer=\(singer)")
+    func getSearching(brand: String, text: String) -> Observable<SongsResponse> {
+        return networks.getData(url: self.networks.getSearchURL() + "brand=\(brand)&\(text)")
     }
 }

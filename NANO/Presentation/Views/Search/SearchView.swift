@@ -86,11 +86,11 @@ extension SearchView {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            AppState.shared.searchingItem = "title"
+            AppState.shared.searchingItem = "title="
         case 1:
-            AppState.shared.searchingItem = "singer"
+            AppState.shared.searchingItem = "singer="
         default:
-            AppState.shared.searchingItem = "title"
+            AppState.shared.searchingItem = "title="
         }
     }
 }

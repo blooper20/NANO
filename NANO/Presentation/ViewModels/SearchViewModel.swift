@@ -12,15 +12,14 @@ final class SearchViewModel: ViewModel {
     
     //MARK: - Declaration
     var disposeBag = DisposeBag()
-    let search = SearchUseCase.shared
-    let appState = AppState.shared
+    let searchUseCase = SearchUseCase.shared
     
     //MARK: - Transform
     func transform(input: Input) -> Output {
         let searchingResult = input.tapSearching
             .withLatestFrom(input.searchedText)
             .flatMap { text in
-                return self.search.getSearchTitle(brand: self.appState.brand, title: text)
+                return self.searchUseCase.getSearching(brand: AppState.shared.brand, text: AppState.shared.searchingItem + text)
             }
             .map { response in
                 return response.data
