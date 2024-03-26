@@ -13,9 +13,7 @@ import RxCocoa
 final class SongDetailInfoView: UIView, ContentViewDelegating {
     
     //MARK: - Declaration
-    weak var viewController: UIViewController?
     weak var delegate: ContentViewDelegate?
-    
     private let disposebag = DisposeBag()
 
     var brandLabel: UILabel = {
@@ -88,9 +86,13 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     lazy var reserveButton: MainButton = {
         let button = MainButton(title: "예약하기")
         button.rx.tap.subscribe(onNext: { [weak self] in
-            if let delegate = self?.delegate {  
-                delegate.contentViewAction(presentView: PlaylistSelectView(), hasNavigation: true)
-            }    
+            if let delegate = self?.delegate {
+                
+                let playlistSelectView = PlaylistSelectView()
+                playlistSelectView.delegate = delegate
+                
+                delegate.contentViewAction(presentView: playlistSelectView, hasNavigation: true)
+            }
         }).disposed(by: disposebag)
 
         return button

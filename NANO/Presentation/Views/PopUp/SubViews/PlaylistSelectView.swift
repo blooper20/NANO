@@ -38,7 +38,17 @@ final class PlaylistSelectView: UIView, ContentViewDelegating {
         let emojiConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold, scale: .medium)
         button.setImage(UIImage(systemName: "plus", withConfiguration: emojiConfig), for: .normal)
         button.tintColor = .black
-
+        
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            if let delegate = self?.delegate {
+                
+                let createNewPlaylistView = CreateNewPlaylistView()
+                createNewPlaylistView.delegate = delegate
+                
+                delegate.contentViewAction(presentView: createNewPlaylistView, hasNavigation: false)
+            }
+        }).disposed(by: disposebag)
+        
         return button
     }()
     
@@ -71,12 +81,6 @@ extension PlaylistSelectView {
             make.bottom.equalToSuperview().inset(calculatingHeight(height: 20))
             make.right.equalToSuperview().inset(calculatingWidth(width: 10))
         }
-    }
-    
-    private func setPlusButtonAction() {
-        plusButton.rx.tap.subscribe(onNext: { [weak self] in
-            
-        }).disposed(by: disposebag)
     }
 }
 

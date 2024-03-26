@@ -7,10 +7,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class CreateNewPlaylistView: UIView {
+final class CreateNewPlaylistView: UIView, ContentViewDelegating {
     
     //MARK: - Declaration
+    weak var delegate: ContentViewDelegate?
+    private let disposebag = DisposeBag()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "새 예약목록"
