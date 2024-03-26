@@ -53,7 +53,11 @@ final class PopUpView: UIView {
         return button
     }()
     
-    var contentView: UIView
+    var contentView: UIView {
+        willSet {
+            self.resetContentView(newContentView: newValue)
+        }
+    }
 
     //MARK: - Initialize
     convenience init(contentView: UIView) {
@@ -98,8 +102,20 @@ extension PopUpView {
             make.width.height.equalTo(50)
         }
         
-        self.popupView.addSubview(self.contentView)
+        self.popupView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
+            make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
+            make.bottom.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
+        }
+    }
+    
+    private func resetContentView(newContentView: UIView) {
+        
+        self.contentView.removeFromSuperview()
+        
+        self.popupView.addSubview(newContentView)
+        newContentView.snp.makeConstraints { make in
             make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))

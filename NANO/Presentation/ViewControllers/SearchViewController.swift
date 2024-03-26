@@ -54,8 +54,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        let songInfoView = SongDetailInfoView()
+        let songInfoView = SongDetailInfoView(hasReserveButton: true)
         let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
+        
+        songInfoView.delegate = popUpVC
         
         popUpVC.modalTransitionStyle = .crossDissolve
         popUpVC.modalPresentationStyle = .fullScreen

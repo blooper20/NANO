@@ -25,7 +25,6 @@ final class PopUpViewController: UIViewController {
         self.contentView = contentView
         self.popupView = PopUpView(contentView: contentView)
         super.init(nibName: nil, bundle: nil)
-        self.contentView.delegate = self
     }
     
     required init(coder: NSCoder) {
@@ -76,16 +75,10 @@ extension PopUpViewController: ContentViewDelegate {
             self.popupView.sectionView.removeFromSuperview()
         }
         
-        self.popupView.contentView.removeFromSuperview()
-        
-        self.popupView.addSubview(presentView)
-        
-        presentView.snp.makeConstraints { make in
-            make.top.equalTo(self.popupView.dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
-            make.bottom.equalTo(self.popupView.popupView)
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
-        }
-        
-        self.popupView.setNeedsLayout()
+        self.popupView.contentView = presentView
+    }
+    
+    func dismissViewController() {
+        self.dismiss(animated: true)
     }
 }

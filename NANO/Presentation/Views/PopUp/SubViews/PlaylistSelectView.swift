@@ -38,7 +38,17 @@ final class PlaylistSelectView: UIView, ContentViewDelegating {
         let emojiConfig = UIImage.SymbolConfiguration(pointSize: 15, weight: .bold, scale: .medium)
         button.setImage(UIImage(systemName: "plus", withConfiguration: emojiConfig), for: .normal)
         button.tintColor = .black
-
+        
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            if let delegate = self?.delegate {
+                
+                let createNewPlaylistView = CreateNewPlaylistView()
+                createNewPlaylistView.delegate = delegate
+                
+                delegate.contentViewAction(presentView: createNewPlaylistView, hasNavigation: false)
+            }
+        }).disposed(by: disposebag)
+        
         return button
     }()
     
@@ -72,12 +82,6 @@ extension PlaylistSelectView {
             make.right.equalToSuperview().inset(calculatingWidth(width: 10))
         }
     }
-    
-    private func setPlusButtonAction() {
-        plusButton.rx.tap.subscribe(onNext: { [weak self] in
-            
-        }).disposed(by: disposebag)
-    }
 }
 
 //MARK: - Delegate, DataSource
@@ -96,5 +100,11 @@ extension PlaylistSelectView: UITableViewDelegate, UITableViewDataSource {
         cell.bind(model: .init(brand: "brand", title: "title"))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegate?.dismissViewController()
+        //FIXME: - 해당 플레이리스트에 곡을 추가해주는 로직
     }
 }

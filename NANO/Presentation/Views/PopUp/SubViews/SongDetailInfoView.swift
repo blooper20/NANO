@@ -13,10 +13,9 @@ import RxCocoa
 final class SongDetailInfoView: UIView, ContentViewDelegating {
     
     //MARK: - Declaration
-    weak var viewController: UIViewController?
     weak var delegate: ContentViewDelegate?
-    
     private let disposebag = DisposeBag()
+    var hasReserveButton: Bool
 
     var brandLabel: UILabel = {
         let label = UILabel()
@@ -88,20 +87,30 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     lazy var reserveButton: MainButton = {
         let button = MainButton(title: "예약하기")
         button.rx.tap.subscribe(onNext: { [weak self] in
-            if let delegate = self?.delegate {  
-                delegate.contentViewAction(presentView: PlaylistSelectView(), hasNavigation: true)
-            }    
+            if let delegate = self?.delegate {
+                
+                let playlistSelectView = PlaylistSelectView()
+                playlistSelectView.delegate = delegate
+                
+                delegate.contentViewAction(presentView: playlistSelectView, hasNavigation: true)
+            }
         }).disposed(by: disposebag)
 
         return button
     }()
     
     //MARK: - Initialize
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    convenience init(hasReserveButton: Bool) {
+        self.init()
+        self.hasReserveButton = hasReserveButton
         setUpViews()
+        
         bind(songInfo: .init(no: "1234", title: "asdfasdjgfgfff kg k kg kfgfgkgfgjfgf", singer: "asdfasdf", composer: "ghghgghf", lyricist: "asdffgbb", release: "gggdgd"))
+    }
+    
+    override init(frame: CGRect) {
+        self.hasReserveButton = true
+        super.init(frame: frame)
     }
     
     required init?(coder: NSCoder) {
@@ -149,16 +158,25 @@ extension SongDetailInfoView {
         }
         
         self.addSubview(lyricistLabel)
-        lyricistLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
-            make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
-        }
         
-        self.addSubview(reserveButton)
-        reserveButton.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 76))
-            make.top.equalTo(lyricistLabel.snp.bottom).offset(calculatingHeight(height: 60))
-            make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+        if hasReserveButton {
+            lyricistLabel.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
+                make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
+            }
+            
+            self.addSubview(reserveButton)
+            reserveButton.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 76))
+                make.top.equalTo(lyricistLabel.snp.bottom).offset(calculatingHeight(height: 60))
+                make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+            }
+        } else {
+            lyricistLabel.snp.makeConstraints { make in
+                make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 38))
+                make.top.equalTo(composerLabel.snp.bottom).offset(calculatingHeight(height: 20))
+                make.bottom.equalToSuperview().inset(calculatingHeight(height: 70))
+            }
         }
     }
     

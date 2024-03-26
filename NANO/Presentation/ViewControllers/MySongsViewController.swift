@@ -33,10 +33,14 @@ final class MySongsViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setNavigationItem()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
 
@@ -65,6 +69,11 @@ extension MySongsViewController: UITableViewDelegate, UITableViewDataSource {
         playlistCell.bind(model: .init(brand: "brand", title: "title"))
         
         return playlistCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mySongViewController = MySongViewController(playlistTitle: "플레이리스트 이름")
+        self.navigationController?.pushViewController(mySongViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

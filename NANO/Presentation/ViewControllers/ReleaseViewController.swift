@@ -10,6 +10,7 @@ import UIKit
 final class ReleaseViewController: UIViewController {
     
     //MARK: - Declaration
+    private var today: String
     private lazy var songListView: SongListView = {
         let view = SongListView()
         view.songInfoTableView.dataSource = self
@@ -20,6 +21,7 @@ final class ReleaseViewController: UIViewController {
     
     //MARK: - Initialize
     init() {
+        self.today = "@@@@/!!/##"
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,10 +35,26 @@ final class ReleaseViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = setTodayDateFormatter()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension ReleaseViewController {
+    
+    //MARK: - Function
+    private func setTodayDateFormatter() -> String {
+        let nowDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        let convertNowStr = dateFormatter.string(from: nowDate)
         
-        self.navigationItem.title = "신곡"
+        return convertNowStr
     }
 }
 
@@ -56,5 +74,22 @@ extension ReleaseViewController: UITableViewDelegate, UITableViewDataSource {
         songInfoCell.bind(model: .init(no: "no", title: "title", singer: "singer"))
         
         return songInfoCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
+            return
+        }
+        
+        let songInfoView = SongDetailInfoView(hasReserveButton: false)
+        let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
+        
+        songInfoView.delegate = popUpVC
+        
+        popUpVC.modalTransitionStyle = .crossDissolve
+        popUpVC.modalPresentationStyle = .fullScreen
+        
+        self.present(popUpVC, animated: true)
     }
 }
