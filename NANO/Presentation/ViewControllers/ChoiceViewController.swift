@@ -7,18 +7,31 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class ChoiceViewController: UIViewController {
     
     //MARK: - Declaration
+    private var brand = "TJ"
+    private let disposebag = DisposeBag()
+    let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
+    
     private lazy var choiceView: ChoiceView = {
         let view = ChoiceView()
         view.brandPickerView.pickerView.dataSource = self
         view.brandPickerView.pickerView.delegate = self
-        view.onlyTitleButton.addTarget(self, action: #selector(onlyTitleButtonTapped), for: .touchUpInside)
+        
+        view.onlyTitleButton.rx.tap.subscribe(onNext: {
+            let customTabBarController = CustomTabBarController()
+            self.navigationController?.pushViewController(customTabBarController, animated: true)
+            AppState.shared.brand = self.brand
+        }).disposed(by: disposebag)
+        
         return view
     }()
-    let brandName = ["TJ", "금영", "JoySound", "DAM", "UGA"]
+    
+    
     
     //MARK: - View Cycle
     override func loadView() {
@@ -46,9 +59,14 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return brandName.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        brand = brandName[row]
+    }
+    
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let color = UIColor.black
-
+        
         return NSAttributedString(string: brandName[row], attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
@@ -58,13 +76,5 @@ extension ChoiceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return calculatingWidth(width: 200)
-    }
-}
-
-extension ChoiceViewController {
-    //MARK: - Selector
-    @objc func onlyTitleButtonTapped() {
-        let customTabBarController = CustomTabBarController()
-        self.navigationController?.pushViewController(customTabBarController, animated: true)
     }
 }

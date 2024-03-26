@@ -7,10 +7,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class PlaylistSelectView: UIView {
+final class PlaylistSelectView: UIView, ContentViewDelegating {
     
     //MARK: - Declaration
+    weak var delegate: ContentViewDelegate?
+    private let disposebag = DisposeBag()
+    
     private lazy var playlistTableView: UITableView = {
         let tableView = UITableView()
         tableView.isScrollEnabled = true
@@ -53,10 +58,9 @@ extension PlaylistSelectView {
     
     //MARK: - Function
     private func setUpViews() {
-        
         self.addSubview(playlistTableView)
         playlistTableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(calculatingHeight(height: 5))
+            make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
             make.height.equalTo(calculatingHeight(height: 400))
         }
@@ -67,6 +71,12 @@ extension PlaylistSelectView {
             make.bottom.equalToSuperview().inset(calculatingHeight(height: 20))
             make.right.equalToSuperview().inset(calculatingWidth(width: 10))
         }
+    }
+    
+    private func setPlusButtonAction() {
+        plusButton.rx.tap.subscribe(onNext: { [weak self] in
+            
+        }).disposed(by: disposebag)
     }
 }
 

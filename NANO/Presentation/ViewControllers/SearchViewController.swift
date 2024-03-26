@@ -48,6 +48,21 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
+            return
+        }
+        
+        let songInfoView = SongDetailInfoView()
+        let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
+        
+        popUpVC.modalTransitionStyle = .crossDissolve
+        popUpVC.modalPresentationStyle = .fullScreen
+        
+        self.present(popUpVC, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songInfoCell = tableView.dequeueReusableCell(SongInfoCell.self, for: indexPath)
         songInfoCell.bind(model: .init(no: "no", title: "title", singer: "singer"))

@@ -70,7 +70,7 @@ extension SongInfoCell {
     //MARK: - Function
     private func setUpSubViews() {
         
-        self.addSubview(numberLabel)
+        self.contentView.addSubview(numberLabel)
         numberLabel.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview().inset(calculatingHeight(height: 40))
             make.centerY.equalToSuperview()
@@ -78,14 +78,14 @@ extension SongInfoCell {
             make.width.equalTo(calculatingWidth(width: 120))
         }
         
-        self.addSubview(titleLabel)
+        self.contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(numberLabel.snp.right).offset(calculatingWidth(width: 17))
             make.right.equalToSuperview().inset(calculatingWidth(width: 40))
             make.top.equalToSuperview().offset(calculatingHeight(height: 20))
         }
         
-        self.addSubview(singerLabel)
+        self.contentView.addSubview(singerLabel)
         singerLabel.snp.makeConstraints { make in
             make.left.equalTo(numberLabel.snp.right).offset(calculatingWidth(width: 17))
             make.right.equalToSuperview().inset(calculatingWidth(width: 40))

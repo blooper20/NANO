@@ -7,20 +7,25 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class PopUpViewController: UIViewController {
     
     //MARK: - Declaration
     private var snapshotView: UIView
     private var popupView: PopUpView
-    private var contentsView: UIView
+    private var contentView: UIView & ContentViewDelegating
+    
+    private let disposebag = DisposeBag()
     
     //MARK: - Initialize
-    init(snapshotView: UIView, constentsView: UIView) {
+    init(snapshotView: UIView, contentView: UIView & ContentViewDelegating) {
         self.snapshotView = snapshotView
-        self.contentsView = constentsView
-        self.popupView = PopUpView(constentsView: constentsView)
+        self.contentView = contentView
+        self.popupView = PopUpView(contentView: contentView)
         super.init(nibName: nil, bundle: nil)
+        self.contentView.delegate = self
     }
     
     required init(coder: NSCoder) {
@@ -33,6 +38,7 @@ final class PopUpViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpView()
+        setDismissButton()
     }
     
     override func viewDidLoad() {
@@ -49,5 +55,37 @@ extension PopUpViewController {
         popupView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func setDismissButton() {
+        popupView.dismissButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
+        }).disposed(by: disposebag)
+    }
+}
+
+//MARK: - Delegate
+extension PopUpViewController: ContentViewDelegate {
+    
+    func contentViewAction(presentView: UIView & ContentViewDelegating, hasNavigation: Bool) {
+        
+        if hasNavigation {
+            self.popupView.setUpNavigationView()
+        } else {
+            self.popupView.titleLabel.removeFromSuperview()
+            self.popupView.sectionView.removeFromSuperview()
+        }
+        
+        self.popupView.contentView.removeFromSuperview()
+        
+        self.popupView.addSubview(presentView)
+        
+        presentView.snp.makeConstraints { make in
+            make.top.equalTo(self.popupView.dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
+            make.bottom.equalTo(self.popupView.popupView)
+            make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
+        }
+        
+        self.popupView.setNeedsLayout()
     }
 }

@@ -40,17 +40,12 @@ final class MySongsViewController: UIViewController {
     }
 }
 
+//MARK: - Function
 extension MySongsViewController {
     
-    //MARK: - Function
     private func setNavigationItem() {
         self.navigationItem.title = "보관함"
         self.navigationItem.rightBarButtonItem = editmodeButton
-    }
-    
-    @objc func editmodeButtonTapped() {
-        mySongsView.playlistTableView.isEditing.toggle()
-        editmodeButton.title = mySongsView.playlistTableView.isEditing ? "완료" : "수정"
     }
 }
 
@@ -70,5 +65,27 @@ extension MySongsViewController: UITableViewDelegate, UITableViewDataSource {
         playlistCell.bind(model: .init(brand: "brand", title: "title"))
         
         return playlistCell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+//        resumeCategory[indexPath.section].items.remove(at: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+//        indexPath를 이용해서 row 옮기기
+//        resumeCategory[sourceIndexPath.section].items.remove(at: sourceIndexPath.row)
+//        resumeCategory[destinationIndexPath.section].items.insert(targetItem, at: destinationIndexPath.row)
+    }
+}
+
+//MARK: - Selector
+extension MySongsViewController {
+    
+    @objc func editmodeButtonTapped() {
+        mySongsView.playlistTableView.isEditing.toggle()
+        editmodeButton.title = mySongsView.playlistTableView.isEditing ? "완료" : "수정"
     }
 }

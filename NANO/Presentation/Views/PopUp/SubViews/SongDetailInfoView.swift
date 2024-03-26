@@ -7,10 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class SongDetailInfoView: UIView {
+final class SongDetailInfoView: UIView, ContentViewDelegating {
     
     //MARK: - Declaration
+    weak var viewController: UIViewController?
+    weak var delegate: ContentViewDelegate?
+    
+    private let disposebag = DisposeBag()
+
     var brandLabel: UILabel = {
         let label = UILabel()
         label.textColor = .main
@@ -80,7 +87,12 @@ final class SongDetailInfoView: UIView {
     
     lazy var reserveButton: MainButton = {
         let button = MainButton(title: "예약하기")
-        
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            if let delegate = self?.delegate {  
+                delegate.contentViewAction(presentView: PlaylistSelectView(), hasNavigation: true)
+            }    
+        }).disposed(by: disposebag)
+
         return button
     }()
     
@@ -151,7 +163,7 @@ extension SongDetailInfoView {
     }
     
     func bind(songInfo: SongInfo) {
-        brandLabel.text = "brand"
+        brandLabel.text = AppState.shared.brand
         numberLabel.text = "no.\(songInfo.no)"
         releaseLabel.text = songInfo.release
         songTitleLabel.text = "제목: \(songInfo.title)"
