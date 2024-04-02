@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 final class ReleaseViewModel: ViewModel {
     
@@ -22,7 +23,7 @@ final class ReleaseViewModel: ViewModel {
         }
         .map { response in
             return response.data
-        }
+        }.asDriver(onErrorJustReturn: .init())
         
         return Output(releaseSongs: releaseSongs)
     }
@@ -37,6 +38,6 @@ extension ReleaseViewModel {
     
     //MARK: - Output
     struct Output {
-        let releaseSongs: Observable<[SongInfo]>
+        let releaseSongs: Driver<[SongInfo]>
     }
 }

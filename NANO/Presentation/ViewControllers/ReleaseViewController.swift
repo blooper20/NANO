@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ReleaseViewController: UIViewController {
     
     //MARK: - Declaration
+    private lazy var viewModel = ReleaseViewModel()
+    private let disposbag = DisposeBag()
+    
     private var today: String
+    
     private lazy var songListView: SongListView = {
         let view = SongListView()
-        view.songInfoTableView.dataSource = self
         view.songInfoTableView.delegate = self
         
         return view
@@ -42,10 +47,25 @@ final class ReleaseViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
     }
 }
 
 extension ReleaseViewController {
+    
+    //MARK: - ViewModel
+    private func bindViewModel() {
+        let input = ReleaseViewModel.Input.init(viewDidLoad: .just(()))
+        
+        let output = viewModel.transform(input: input)
+        
+        output.releaseSongs
+            .drive(songListView.songInfoTableView.rx.items(cellIdentifier: SongInfoCell.reuseIdentifier, cellType: SongInfoCell.self)) { (_, songListItem, cell) in
+                
+                cell.bind(model: .init(no: songListItem.no, title: songListItem.title, singer: songListItem.singer))
+            }
+            .disposed(by: disposbag)
+    }
     
     //MARK: - Function
     private func setTodayDateFormatter() -> String {
@@ -71,7 +91,6 @@ extension ReleaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songInfoCell = tableView.dequeueReusableCell(SongInfoCell.self, for: indexPath)
-        songInfoCell.bind(model: .init(no: "no", title: "title", singer: "singer"))
         
         return songInfoCell
     }
