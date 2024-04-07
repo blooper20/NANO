@@ -19,7 +19,6 @@ final class ReleaseViewController: UIViewController {
     
     private lazy var songListView: SongListView = {
         let view = SongListView()
-        view.songInfoTableView.delegate = self
         
         return view
     }()
@@ -65,6 +64,30 @@ extension ReleaseViewController {
                 cell.bind(model: .init(no: songListItem.no, title: songListItem.title, singer: songListItem.singer))
             }
             .disposed(by: disposbag)
+        
+        self.songListView.songInfoTableView.rx.itemSelected
+            .withLatestFrom(output.releaseSongs) { index, items -> SongInfo in
+            return items[index.row]
+        }
+        .subscribe(onNext: { item in
+            
+            guard let snapshotView = self.view.snapshotView(afterScreenUpdates: true) else {
+                return
+            }
+            
+            let songInfoView = SongDetailInfoView(hasReserveButton: false)
+            songInfoView.bind(songInfo: item)
+            
+            let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
+            
+            songInfoView.delegate = popUpVC
+            
+            popUpVC.modalTransitionStyle = .crossDissolve
+            popUpVC.modalPresentationStyle = .fullScreen
+            
+            self.present(popUpVC, animated: true)
+        })
+        .disposed(by: disposbag)
     }
     
     //MARK: - Function
@@ -75,40 +98,5 @@ extension ReleaseViewController {
         let convertNowStr = dateFormatter.string(from: nowDate)
         
         return convertNowStr
-    }
-}
-
-//MARK: - Delegate, DataSource
-extension ReleaseViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let songInfoCell = tableView.dequeueReusableCell(SongInfoCell.self, for: indexPath)
-        
-        return songInfoCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let snapshotView = view.snapshotView(afterScreenUpdates: true) else {
-            return
-        }
-        
-        let songInfoView = SongDetailInfoView(hasReserveButton: false)
-        let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
-        
-        songInfoView.delegate = popUpVC
-        
-        popUpVC.modalTransitionStyle = .crossDissolve
-        popUpVC.modalPresentationStyle = .fullScreen
-        
-        self.present(popUpVC, animated: true)
     }
 }
