@@ -11,11 +11,9 @@ import SnapKit
 final class SearchView: UIView {
     
     //MARK: - Declaration
-    private lazy var singerTitleSegmentedControl: UISegmentedControl = {
+    lazy var singerTitleSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["제목","가수"])
         segmentedControl.backgroundColor = .main
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(indexChanged(_:)), for: .valueChanged)
 
         return segmentedControl
     }()
@@ -76,21 +74,6 @@ extension SearchView {
             make.top.equalTo(searchBar.snp.bottom).offset(calculatingHeight(height: 40))
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 18))
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(calculatingHeight(height: 20))
-        }
-    }
-}
-
-//MARK: - Selector
-extension SearchView {
-    @objc func indexChanged(_ sender: UISegmentedControl) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            AppState.shared.searchingItem = "title="
-        case 1:
-            AppState.shared.searchingItem = "singer="
-        default:
-            AppState.shared.searchingItem = "title="
         }
     }
 }

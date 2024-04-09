@@ -10,6 +10,8 @@ import UIKit
 final class SearchViewController: UIViewController {
     
     //MARK: - Declaration
+    private lazy var viewModel = SearchViewModel()
+    
     private lazy var searchView: SearchView = {
         let view = SearchView()
         view.songInfoTableView.dataSource = self
@@ -27,6 +29,7 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setSegmentedControl()
         self.navigationItem.title = "검색"
         self.tabBarController?.navigationItem.title = "검색"
     }
@@ -36,7 +39,28 @@ final class SearchViewController: UIViewController {
         self.view.endEditing(true)
     }
 }
-
+extension SearchViewController {
+    
+    //MARK: - Function
+    private func setSegmentedControl() {
+        
+        searchView.singerTitleSegmentedControl.selectedSegmentIndex = 0
+        searchView.singerTitleSegmentedControl.addTarget(self, action: #selector(indexChanged(_:)), for: .valueChanged)
+    }
+    
+    //MARK: - Selector
+    @objc func indexChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            viewModel.searchingItem = .title
+        case 1:
+            viewModel.searchingItem = .singer
+        default:
+            viewModel.searchingItem = .title
+        }
+    }
+}
 //MARK: - Delegate, DataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     

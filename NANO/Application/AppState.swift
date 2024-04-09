@@ -14,6 +14,5 @@ class AppState {
     private init() {}
     
     var brand: String = ""
-    
-    var searchingItem: String = "title="
 }
+

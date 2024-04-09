@@ -69,9 +69,9 @@ extension ReleaseViewController {
             .withLatestFrom(output.releaseSongs) { index, items -> SongInfo in
             return items[index.row]
         }
-        .subscribe(onNext: { item in
+        .subscribe(onNext: { [weak self] item in
             
-            guard let snapshotView = self.view.snapshotView(afterScreenUpdates: true) else {
+            guard let snapshotView = self?.view.snapshotView(afterScreenUpdates: true) else {
                 return
             }
             
@@ -85,7 +85,7 @@ extension ReleaseViewController {
             popUpVC.modalTransitionStyle = .crossDissolve
             popUpVC.modalPresentationStyle = .fullScreen
             
-            self.present(popUpVC, animated: true)
+            self?.present(popUpVC, animated: true)
         })
         .disposed(by: disposbag)
     }
