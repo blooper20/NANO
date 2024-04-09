@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 enum SearchParameter {
     case title
@@ -35,7 +36,7 @@ final class SearchViewModel: ViewModel {
             }
             .map { response in
                 return response.data
-            }
+            }.asDriver(onErrorJustReturn: .init())
         
         return Output(searchingResult: searchingResult)
     }
@@ -50,6 +51,6 @@ extension SearchViewModel {
     
     //MARK: - Output
     struct Output {
-        let searchingResult: Observable<[SongInfo]>
+        let searchingResult: Driver<[SongInfo]>
     }
 }

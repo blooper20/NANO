@@ -18,7 +18,7 @@ final class SearchView: UIView {
         return segmentedControl
     }()
     
-    private lazy var searchBar: MainSearchBar = {
+    lazy var searchBar: MainSearchBar = {
         let searchBar = MainSearchBar()
         searchBar.placeholder = "검색할 내용을 입력하세요."
         
