@@ -104,7 +104,7 @@ extension PopUpView {
         
         self.popupView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 10))
+            make.top.equalTo(dismissButton.snp.bottom).offset(calculatingHeight(height: 5))
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(calculatingWidth(width: 15))
         }

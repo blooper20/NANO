@@ -61,7 +61,7 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
         let label = UILabel()
         label.textColor = .label
         label.font = .labelText
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         label.sizeToFit()
         
         return label
@@ -71,7 +71,7 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
         let label = UILabel()
         label.textColor = .label
         label.font = .labelText
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         label.sizeToFit()
         
         return label
@@ -81,7 +81,7 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
         let label = UILabel()
         label.textColor = .label
         label.font = .labelText
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         label.sizeToFit()
         
         return label
