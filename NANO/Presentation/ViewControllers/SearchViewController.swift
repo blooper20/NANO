@@ -63,15 +63,11 @@ extension SearchViewController {
                     return
                 }
                 
-                let songInfoView = SongDetailInfoView(hasReserveButton: true)
-                songInfoView.bind(songInfo: item)
+                let songInfoView = SongDetailInfoView(hasReserveButton: true, songInfo: item)
                 
                 let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
                 
                 songInfoView.delegate = popUpVC
-                
-                popUpVC.modalTransitionStyle = .crossDissolve
-                popUpVC.modalPresentationStyle = .fullScreen
                 
                 self?.present(popUpVC, animated: true)
             })

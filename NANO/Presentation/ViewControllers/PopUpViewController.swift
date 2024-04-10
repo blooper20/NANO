@@ -24,7 +24,9 @@ final class PopUpViewController: UIViewController {
         self.snapshotView = snapshotView
         self.contentView = contentView
         self.popupView = PopUpView(contentView: contentView)
+        
         super.init(nibName: nil, bundle: nil)
+        setModalStyle()
     }
     
     required init(coder: NSCoder) {
@@ -37,7 +39,7 @@ final class PopUpViewController: UIViewController {
         self.view.backgroundColor = .white
         
         setUpView()
-        setDismissButton()
+        setDismissButton()   
     }
     
     override func viewDidLoad() {
@@ -60,6 +62,11 @@ extension PopUpViewController {
         popupView.dismissButton.rx.tap.subscribe(onNext: { [weak self] in
             self?.dismiss(animated: true)
         }).disposed(by: disposebag)
+    }
+    
+    private func setModalStyle() {
+        self.modalTransitionStyle = .crossDissolve
+        self.modalPresentationStyle = .fullScreen
     }
 }
 

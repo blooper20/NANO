@@ -103,12 +103,12 @@ final class SongDetailInfoView: UIView, ContentViewDelegating {
     }()
     
     //MARK: - Initialize
-    convenience init(hasReserveButton: Bool) {
+    convenience init(hasReserveButton: Bool, songInfo: SongInfo) {
         self.init()
         self.hasReserveButton = hasReserveButton
         setUpViews()
         
-        bind(songInfo: .init(no: "1234", title: "asdfasdjgfgfff kg k kg kfgfgkgfgjfgf", singer: "asdfasdf", composer: "ghghgghf", lyricist: "asdffgbb", release: "gggdgd"))
+        bind(songInfo: songInfo)
     }
     
     override init(frame: CGRect) {

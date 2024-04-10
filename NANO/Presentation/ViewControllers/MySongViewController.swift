@@ -83,13 +83,10 @@ extension MySongViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        let songInfoView = SongDetailInfoView(hasReserveButton: false)
+        let songInfoView = SongDetailInfoView(hasReserveButton: false, songInfo: .init(no: "", title: "", singer: "", composer: "", lyricist: "", release: ""))
         let popUpVC = PopUpViewController(snapshotView: snapshotView, contentView: songInfoView)
         
         songInfoView.delegate = popUpVC
-        
-        popUpVC.modalTransitionStyle = .crossDissolve
-        popUpVC.modalPresentationStyle = .fullScreen
         
         self.present(popUpVC, animated: true)
     }
